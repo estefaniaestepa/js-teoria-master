@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <!--   EL AMBITO DE LAS VARIABLES -->
+
+  <!-- VEREMOS UN EJEMPLO -->
+
+  var texto= "Hola mundo soy una variable global"; <!-- PONDREMOS UNA VARIABLE -->
+  var numero= 12;<!-- QUE PASARIA SI QUISIERAMOS ACCEDER A ESTA NUEVA VARIABLE QUE HEMOS CREADO DENTRO DE LA FUNCION -->
+
+  function holaMundo (texto){ <!-- TENEMOS UNA FUNCION QUE RECIBE UN PARAMETRO () -->
+  
+    var hola_mundo= "texto dentro de funcion" <!-- QUE PASA SI DEFINIMOS UNA VARIABLE DENTRO DE MI FUNCION, SI QUE PODRIAMOS ACCEDER Y HARIAMOS UN CONSOLE.LOG (PORQUE ES UNA VARIABLE LOCAL DENTRO DE LA FUNCION) -->
+  console.log(texto);
+  console.log(numero); <!-- PODRIAMOS HACER UN CONSOLE.LOG LLAMANDO A ESA VARIABLE EXTERNA  -->
+  console.log(hola_mundo);
+  }
+
+  holaMundo (texto); <!-- LUEGO LA LLAMAMOS  -->
+
+
+<!--   QUE PASA SI QUEREMOS LLAMAR A LA VARIABLE hola_mundo FUERA DE LA FUNCION CON UN CONSOLE.LOG NO SE PUEDE HACER PORQUE LA VARIABLE hola_mundo NO ESTA DEFINIDA EN EL AMBITO GLOBAL DEL PROGRAMA
+  ESTA DEFINIDA DENTRO DE LA FUNCION POR LO TANTO TENEMOS ACCESO A ESA VARIABLE SOLO DENTRO DE LA FUNCION PERO NO FUERA DE ELLA 
+  LAS VARIABLES DENTRO DE LA FUNCION SON LOCALES Y SOLO SON ACCESIBLES DENTRO DE LA FUNCION
+  SE PODRIA HACER SI LA VARIABLE ESTA DEFINIDA EN EL GLOBAL FUERA DE LA FUNCION -->
+
+
+
+
+<!--   COMO CONVERTIR UN NUMERO A UN STRING -->
+<!-- UTILIZANDO EL METODO .TOSTRING () -->
+<!-- UNA VARIABLE SE COMPORTA COMO UN OBJETO Y TIENE VARIOS METODOS QUE PODEMOS UTILIZAR, UN METODO ES SIMPLEMENTE UNA FUNCION PERO APLICADA A UN OBJETO
+POR EJEMPLO TENEMOS EL OBJETO NUMERO Y DENTRO TENEMOS EL METODO (numero.toString) -->
+<!-- SI PONEMOS DELANTE DE NUMERO typeof PODEMOS COMPROBAR QUE ES UN STRING , NOS APARECE EN LA CONSOLA LA PALABRA STRING 
+SI LE QUITAMOS .toString NOS APARECERA QUE ES UN MUNBER-->
+
+
+var texto= "Hola mundo soy una variable global";
+var numero= 12;
+
+function holaMundo (texto){
+  var hola_mundo= "texto dentro de funcion";
+  console.log(texto);
+  console.log( typeof numero.toString);
+  console.log(hola_mundo);
+}
+
+  holaMundo (texto);
+
+</body>
+
+</html>

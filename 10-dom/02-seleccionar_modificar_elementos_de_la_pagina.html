@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<!--   SELECCIONAR Y MODIFICAR ELEMENTOS DE LA PAGINA <HTML> -->
+
+<!-- VAMOS A VER COMO SELECCIONAR CLASES Y ETIQUETAS  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mundo</title>
+</head>
+
+<body>
+  <h1>Curso JavaScript</h1>
+  <p>Nuestro primer script en JS</p>
+  <div id="micaja">!Hola soy una caja¡</div>
+
+<section id="miseccion">
+  <h1>Listado de textos de los Divs</h1>
+
+</section>
+
+  <div>!Soy el primer DIV¡</div>
+  <div>!Yo el segundo¡</div>
+  <div>!El tercero soy yo¡</div>
+
+</body>
+
+
+<!-- JS -->
+
+<!-- VAMOS A BUSCAR TODOS LOS DIV QUE TENEMOS EN NUETSRO HTML -->
+<!-- /*CONSEGUIR ELEMENTOS POR SU ETIQUETA*/ -->
+var todosLosDivs = document.getElementsByTagName ('div');<!-- SI QUETREMOS CONSEGUIR TODOS LOS DIV CREAREMOS UNA VARIABLE Y UTILIZAREMOS EL OBJETO document CON EL METODO .getElementsByTagName ESTO QUIERE DECIR CONSGUIME LOS ELEMENTOS POR TAG Y PODEMOS BUSCAR LA TAG ('div') -->
+console.log(todosLosDivs); <!-- SI ACTUALIZAMOS LA PANTALLA NOS SACARA EN LA CONSOLA UN ARRAY HTML, UNA COLLECTION (COLECCION DE LEMENTOS HTML)EN LA ARRAY APARECERAN TODOS LOS DIV QUE TENEMOS EN HTML -->
+
+<!-- var contenidoEnTexto= todosLosDivs [2] .textContent; --> <!-- SI QUEREMOS MODIFICAR CUALQUIERA DE ESOS ELEMENTOS ACCEDEREMOS AL ARRAY todosLosDivs SELECCIONAMOS AL INDICE QUE QUEREMOS ACCEDER [] Y CON EL . PODEMOS ACCEDER A CUALQUIERA DE LAS PROPIEDADES .textContent ES PARA SACAR EL CONTENIDO QUE TIENE EL DIV -->
+var contenidoEnTexto= todosLosDivs [2]; <!-- TAMBIEN PODEMOS UTILIZAR EL .innerHTML QUE ES LO MISMO LO QUE CAMBIA ES QUE NOS PERMITE ASIGNARLE UN VALOR NUEVO A ESE CONTENIDO DE FORMA QUE SI HACEMOS LO SIGUIENTE -->
+contenidoEnTexto.innerHTML ="Otro texto para el segundo elemento";<!--  Y LE CAMBIAMOS EL VALOR NOS CAMBIARÁ EL DIV DE FORMA QUE PODEMOS MANIPULAR LA ETIQUETA COMO QUERAMOS  -->
+contenidoEnTexto.style.background= "red"; <!-- INCLUSO CAMBIAR EL ESTILO PERO SOLO DE LA ETIQUETA O ELEMENTO QUE ESTAMOS SELECCIONANDO, PORQUE TODOS LOS ELEMENTOS DEL DOM SON UN ARRAY -->
+console.log (contenidoEnTexto);<!--  EN LA CONSOLA NOS MOSTRARA EL TEXTO DE ESE DIV -->
+
+
+
+
+<!-- COMO PODEMOS RECORRER TODOS LOS DIV QUE HAY -->
+<!-- VEREMOS UN EJEMPLO -->
+var todosLosDivs = document.getElementsByTagName ('div');
+var seccion= document.querySelector ("#miseccion");<!--  ESTO ES PARA QUE LA ETIQUETA QUE HEMOS CREADO DE <strong></strong> Y LE HEMOS PUESTO UN ID PODAMOS TRABAJAR COMO SI FUESE CSS -->
+var hr =document.createElement("hr");
+seccion.append(hr); CON ESTO NOS HARIA SEPARACION ABAJO
+var valor; <!-- CREAREMOS UNA VARIABLE -->
+for (valor in todosLosDivs) {<!-- VAMOS A RECORRER LOS ELEMENTOS QUE HAYAN EN TODOS LOS DIV CON UN FOR IN-->
+<!--   console.log(todosLosDivs[valor]); --> <!-- PARA COMPROBAR SI ES TODO TEXTO O DONDE NOS DA VALOR, ESTO ES OPCIONAL -->
+  if(typeOf todosLosDivs[valor].textContent == 'string'){ <!-- SI UTILIZAMOS typeOf YO COMPRUEBO QUE TODOS LOS todosLosDivs[valor].textContent Y NOS DEVUELVE UN ELEMENTO CUYO typeOf ES == 'string' -->
+  var parrafo= document.createElement ("p"); <!--  HAREMOS UNA LISTA Y LA METEREMOS DENTRO DEL BODY PODEMOS UTILIZAR LA FUNCION(.createElement) PARA CREAR EL HTML DESDE JS Y PONDREMOS EL NOMBRE DE LA ETIQUETA O SIMPLEMENTE INCRUSTAR ESOS VALORES DENTRO DE UN DIV O UNA ETIQUETA -->   
+  var texto= document.createTextNode (todosLosDivs[valor].textContent); <!-- PARA CAPTURAR EL VALOR DENTRO DE todosLosDivs PONDREMOS [] Y COGER .textContent -->
+  parrafo.append (texto);<!--  METEMOS EL TEXTO PARA QUE LE LLEGUE A CADA UNO DE ESOS PARRAFOS CON LA FUNCION .append (SIGNIFICA AÑADE DESPUES) y .prepend (AÑADE DESPUES)  -->
+  document.querySelector ("#miseccion").append(parrafo); <!-- AHORA METEREMOS CADA UNO DE ESOS PARRAFOS DENTRO DE OTRA ETIQUETA, PARA ESTO NOS CREAREMOS UNA ETIQUETA EN HTML EN ESTE CASO ES LA ETIQUETA <SECtion></SECtion> CON UN ID Y ESA ETIQUETA LA PODEMOS SELECCIONAR CON .querySelector Y PONDREMOS EL NOMBRE DEL ID Y HACER UN .append Y AÑADIMOS EL PARRADFO -->
+}
+}
+seccion.append(hr); PARA QUE NOS SEPARE EL ELEMENTO Y LO DIVIDA EN UNA LINEA, ESTO LO PONE EN LA PARTE BAJA
+
+  </html>
+  </HTML>
+
+
+</body>
+</html>

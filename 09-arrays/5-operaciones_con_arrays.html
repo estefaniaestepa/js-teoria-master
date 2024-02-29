@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<!--   OPERACIONES CON ARRAYS  -->
+<!--   COMO AÑADIR UN ELEMENTO A UN ARRAY ,QUITARLO Y COMO CONVERTIR UN ARRAY EN STRING -->
+<!-- VEREMOS UN EJEMPLO DE COMO AÑADIR UN ELEMENTO -->
+
+var categorias = ['Acción', 'Terror', 'Comedia'];
+var peliculas =['La verdad Duele', 'La Vida es Bella', 'Gran Torino'];
+
+var cine= [categorias, peliculas];
+
+var elemento = " "; <!-- TAMBIEN SE PUEDE UTILIZAR EL prompt PARA AÑADIR ELEMENTOS Y ESTO QUE SE VAYA REPITIENDO HASTA QUE PONGAMOS UNA PALABRA CONCRETA  -->
+
+do{
+  elemento =prompt ("Introduce tu pelicula :");<!--  QUE NOS SIGA PIDIENDO QUE METAMOS UNA PELICULA  -->
+  peliculas.push = (elemento) ; <!-- Y EN CADA ITERACION VAMOS HACIENDO UN .push DE LA PELICULA QUE HAYAMOS METIDO DEL ELEMENTO -->
+}while ELEMENTO while (elemento !="ACABAR"){ <!-- SEA DIFERENTE != ACABAR (EN MAYUSCULA) MIENTRAS QUE ESO PASE QUE NOS SIGA PIDIENDO EL VALOR DE ELEMENTO -->
+}
+
+console.log (peliculas);<!--  /*en la pestañita que nos aparece iremos añadiendo hasta que le digamos ACABAR y nos mostrara el array con las peliculas que hemos añadido*/ -->
+
+
+
+<!-- ELIMINAR ELEMENTOS  -->
+<!-- EN ESTE CASO DE ARRIBA QUE HEMOS AÑADIDO PELICULAS DESDE LA PESTAÑITA AL VER EL ARRAY CON LAS PELICULAS AÑADIDAS Y LO ACABAMOS CON LA PALBRA ACABAR, TAMBIEN NOS APARECE ESA PALABRA COMO UN ELEMENTO PERO QUEREMOS QUE NO APAREZCA -->
+<!-- VEREMOS UN EJEMPLO -->
+
+var categorias = ['Acción', 'Terror', 'Comedia'];
+var peliculas =['La verdad Duele', 'La Vida es Bella', 'Gran Torino'];
+
+var cine= [categorias, peliculas];
+
+var elemento =" ";
+
+do{
+ elemento =prompt ("Introduce tu pelicula :");
+  peliculas.push = (elemento) ;
+}while (elemento !="ACABAR")
+console.log (peliculas);
+
+
+
+
+<!-- SE PUEDE ELIMINAR DE VARIAS FORMAS -->
+
+<!-- UTILIZANDO EL METODO POP -->
+<!-- INDICAREMOS DEBAJO EL ARRAY DE PELICULAS  -->
+peliculas.pop (); <!-- DE ESTA MANERA SACAMOS EL ULTIMO ELEMENTO -->
+peliculas.pop (); 
+peliculas.pop (); <!-- SI HACEMOS EL .pop VARIAS VECES IRA ELIMINANDO ELEMENTOS TANTAS VECES COMO PONGAMOS .pop Y NO LOS AÑADIRA A NUESTRO ARRAY -->
+
+
+
+<!-- UTILIZANDO UNDEFINED -->
+peliculas[0] = undefined;<!-- TAMBIEN PODRIAMOS HACER LO SIGUIENETE LLAMAMOS A LA ARRAY Y ENTRE [] EN EL INDICE Nº 0 PONERLO A =Undefined CON ESTO ELIMINAMOS UNA PROPIEDAD DE MI ARRAY  -->
+<!-- EN ESTE CASO PONEMOS EL ELEMENTO 0, EL PRIMERO QUE AÑADIMOS A LA PESTAÑITA EN UNDEFINED -->
+
+
+
+<!-- PARA ELIMINAR UN ELEMENTO EN CONCRETO DE UN ARRAY  -->
+
+ var indice = peliculas.indexOf ('Gran Torino');<!-- PRIMERO HARIAMOS UNA VARIABLE Y PONER UN INDEXOF PARA LOCALIZAR DONDE ESTA ESE ELEMENTO Y PONDREMOS EL NOMBRE DEL ELEMENTO QUE QUEREMOS BUSCAR  -->
+ console.log (indice);  <!-- NOS SACARA EN EL NUMERO EN EL CUAL ESTA ESE ELEMENTO -->
+<!-- UNA VEZ TENEMOS EL INDICE DE ESO QUE QUEREMOS BORRAR CONCRETAMENTE TENDRIAMOS QUE COMPROBAR LO SIGUIENTE: -->
+if (indice > -1 ){<!--  SI EL INDICE ES MAYOR A -1, PORQUE EL -1 SIGNIFICARIA QUE LA HA ENCONTRADO -->
+peliculas.splice (indice, 1); <!-- .splice  Y COGER EL INDICE (INDEX) ESTE METODO .splice EN UN ARRAY NOS PERMITE EN BASE A UN INDICE BORRAR TANTOS PASOS COMO QUERAMOS EN ADELANTE, ES DECIR CUANTO INDICE QUEREMOS BORRAR A PARTIR DE ESE, EN ESTE CASO PONEMOS ,1 PORQUE SOLO QUEREMOS BORRAR 1  -->
+}
+
+
+
+
+<!-- ESTO ES OTRA FORMA DE AÑADIR ELEMENTOS  -->
+
+peliculas.push = ("Batman") ; <!-- LLAMAMOS AL ARRAY, UTILIZAMOS EL METODO .push Y AÑADIMOS LAS PELICULAS -->
+console.log (peliculas); <!-- /*podmeos comprobar si se ha añadido el elemento*/ -->
+
+
+
+
+<!-- COMO CONVERTIR UN ARRAY A TEXTO -->
+<!-- UTILIZAREMOS EL METODO .JOIN  PERO ESTE METODO NO FUNCIONA SOLO LLAMANDO A LA VARIABLE SI NO QUE TENEMOS QUE CREAR UNA NUEVA -->
+ var peliculas_string = peliculas.join (); <!-- CON ESTO EL ARRAY DE PELICULAS LO VAMOS A CONVERTIR A UN STRING SEPARADO POR COMAS -->
+console.log (peliculas)
+
+
+
+
+
+</body>
+</html>

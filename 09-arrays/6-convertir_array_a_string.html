@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+  <!-- COMO CONVERTIR UN ARRAY A TEXTO -->
+
+<!-- UTILIZAREMOS EL METODO .JOIN  PERO ESTE METODO NO FUNCIONA SOLO LLAMANDO A LA VARIABLE SI NO QUE TENEMOS QUE CREAR UNA NUEVA -->
+<!--  VEREMOS UN EJEMPLO -->
+
+var categorias = ['Acción', 'Terror', 'Comedia'];
+var peliculas =['La verdad Duele', 'La Vida es Bella', 'Gran Torino'];
+
+var cine= [categorias, peliculas];
+
+var peliculas_string = peliculas.join (); <!-- CON ESTO EL ARRAY DE PELICULAS LO VAMOS A CONVERTIR A UN STRING SEPARADO POR COMAS -->
+console.log (peliculas_string);
+
+
+
+
+
+<!--  VEREMOS OTRO EJEMPLO CON EL METODO .SPLIT  -->
+<!-- EL INDICADOR QUE LE PONEMOS A .split TIENE QUE SER UN ELEMENTO EN COMUN QUE TENGA NUESTRA VARIABLE, COMO SON LAS COMAS Y LOS ESPACIOS ENTRE ELLOS -->
+ var cadena ="texto1, texto2, texto3";
+ var cadena_array=  cadena.split(", ");<!-- PODMEOS DECIR QUE cadena.split CONVIERTEME ESTO ES UN ARRAY TODO LO QUE ESTE SEPARADO POR ", " (COMA Y ESPACIO ) CADA COSA QUE ESTE DIVIDA POR ESO VA A SER UN ELEMENTO DEL ARRAY -->
+console.log (cadena_array);
+
+
+
+</body>
+</html>

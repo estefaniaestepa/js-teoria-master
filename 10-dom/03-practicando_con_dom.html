@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mundo</title>
+</head>
+
+<body>
+  <h1>Curso JavaScript</h1>
+  <p>Nuestro primer script en JS</p>
+  <div id="micaja">!Hola soy una caja¡</div>
+
+<section id="miseccion">
+  
+  <h1 id="encabezado">Listado de textos de los Divs</h1>
+
+</section>
+
+<div class="amarillo">!Soy el primer DIV¡</div>
+<div class="rojo">!Yo el segundo¡</div>
+<div class="rojo">!El tercero soy yo¡</div>
+  
+
+<!--   PRACTICANDO CON DOM -->
+<!--   Query Selector, getElementById, getElementsByClassName -->
+
+<!-- PARA SELECCIONAR UNA CLASE -->
+<!-- HEMOS CREADO EN EL HTML VARIAS CLASS PARA NUESTROS DIV -->
+<!-- /*ESTO ES MAS RECOMENDABLE PARA UTILIZAR EN CLASES*/ -->
+
+
+var div; <!-- PRMERO DEFINIREMOS LA VARIABLE -->
+var divsRojos= document.getElementsByClassName('rojo');<!--  CON LA FUNCION .getElementsByClassName EN LA CONSOLA NOS APARECERÁN LOS DIV -->
+var divsAmarillos= document.getElementsByClassName('amarillo');
+divsAmarillos[0].style.background="yellow"; <!-- LE PODEMOS DAR ESTILOS INDICANDO LA POSICION QUE NOS APARECE EN CONSOLA DE LOS DIVS AMARILLOS  -->
+<!-- divsRojos[0].style.background= "red";  --><!-- ESTO SOLO MODIFICA A LOS DIV ROJO, NO PODEMOS MODIFICARLO EN GLOBAL POR LO QUE TENDREMOS QUE PONER SU INDICE Y REPERTIR TANTOS SEAN-->
+<!-- divsRojos[1].style.background= "red"; -->
+for( div in divsRojos){ <!-- TAMBIEN SE PUEDE HACER CON EL BUCLE FOR IN Y RECORRER EL DIV CON divsRojos -->
+  if(divsRojos[div].className == "rojo"){ <!-- HAREMOS UN IF PARA COMPROBAR SI ES UN DIV, SI EL .className ES EXACTAMENTE IGUAL A ROJO, NOS LO PINTARÁ DE ROJO -->
+  divsRojos[div].style.background= "red"; <!-- LUEGO LE INDICAREMOS LOS ESTILOS QUE QUEREMOS DARLES AL DIV -->
+}
+}
+
+
+
+<!-- QUERY SELECTOR -->
+
+<!-- /*ES SOLO RECOMENDABLE PARA ELEMENTOS QUE SOLO TENGAN UN DIV O UNA ETIQUETA, YA QUE SI TENEMOS VARIOS ELEMENTOS CON LA MISMA CLASE SOLO SACA EL DE 1*/ -->
+<!-- /*ES MEJOR PARA USAR PARA UN ID YA QUE ES UNICO*/ -->
+var id= document.querySelector("#encabezado"); <!-- SI UTILIZAMOS EL .querySelector PARA CAPTURAR UN ID HAREMOS LO SIGUIENTE LO SELECCIONAMOS CON # Y NOMBRE DEL ID -->
+console.log (id);<!-- ; PARA VER SI ME SACA EN LA CONSOLA UN ARRAY DEL ID -->
+
+<!-- var claseRojo= document.querySelector(".rojo");  --><!-- EN ESTE CASO NO SERVIRIA PORQUE TENGO DOS ELEMENTOS CON LA MISMA CLASE -->
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<!--   COMO CREAR PROMESAS -->
+
+<!-- IMAGINEMOS QUE QUEREMOS SEGUIR CON LA PROMESA Y PROCESAR CIERTA INFORMACION
+TENEMOS UN METODO Y HAREMOS UNA FUNCION Y QUEREMOS QUE EN ESA FUNCION SE NOS DEVUELVA OTRA PROMESA TENDREMOS DENTRO DE ELLA UNA VARIABLE CON UN ONJETO JSON (NOMBRE, APELLIDOS, WEB)
+Y QUEREMOS CONVERTIR ESTA INFORMACION A UN JSON STRIN UTILIZAREMOS  JSON.stringify(profesor); Y LE PASARIAMOS EL OBJETO DE JSON EN ESTE CASO PROFESOR
+QUEREMOS QUE ESTA INFORMACION SE MUESTRE PERO CUANDO SE HAYA REALIZADO EL PROCESO , ESTO ES PARA QUE SEPAMOS CREAR UNA PROMESA DESDE CERO, ES DECIR, DENTRO DE LA PROMESA PUEDE HABER LO QUE SEA
+ -->
+
+<!-- COMO HACEMOS UNA PROMESA DESDE CERO? CON return new Promise() ESTO ES UN OBJETO. EL NEW ES UNA PALABRA PARA INSTANCIAR UNA CLASE O CREAR UN OBJETO Promise -->
+
+<!-- EN LA PROMESA Promise TENEMOS UN CALLBACK QUE ES (resolved, reject) ES DECIR LA PROMESA SE HA RESUELTO O NO SE HA RESUELTO -->
+
+<!-- ENTONCES LE PONDREMOS LA FUNCION DE => SI LA PROMESA SE RESUELVE  DENTRO DEL CALLBACK (METEREMOS LA INFORMACION QUE HEMOS CREADO DE VARIABLE CON EL NOMBRE, APELLIDO Y WEB )
+Y EL PROCESAMIENTO DE ESA INFORMACION EL JSON.stringify(profesor); Y A ESO LE CREAREMOS UNA VARIABLE  -->
+
+<!-- AHORA CON UN IF DIREMOS SI EL JSON.stringify(profesor); SE HACE CORRECTAMENTE SI EL Typeof ES UN STRING Y EN EL CASO QUE SEA DIFERENTE A UN STRING != 'string ' LO QUE HAREMOS SERA DEVOLVER UN ERROR
+EN ESTE CASO SOLO TENEMOS UN VAMOS A PONER UNA INSTRUCCION EN EL IF NO HACE FALTA PONER LAS LLAVES , SIMPLEMENTE PONIENDOLO AL LADO LANZAREMOS UN return reject ('error');CON EL METODO reject QUE LO QUE HACE DENEGARME LA PROMESA -->
+
+<!-- Y EN EL CASO QUE VAYA BIEN HAREMOS UN return resolve (profesor_string); Y LE PASAMOS LOS DATOS QUE QUERAMOS  -->
+
+
+<!-- CON ESTO YA TENEMOS OTRA PROMESA PARA ENCADENAR --> 
+
+function getInfo(){
+  var profesor={
+    nombre: 'Victor',
+    apellidos: 'Robles',
+    url: 'htpps://victorroblesweb.es'
+  };
+
+    return new Promise((resolve, reject) => {
+      var profesor_string= JSON.stringify(profesor);
+
+      if (typeof profesor_string != 'string') return reject ('error');
+
+      return resolve (profesor_string);
+    });
+}
+
+
+<!-- CUANDO SE SUELEN UTILIZAR LAS PROMESAS, CUANDO TENEMOS QUE LEER ARCHIVOS , CUANDO ENVIAMOS COSAS POR POST, RECIBIR COSAS POR AJAX -->
+
+
+<!-- OTRA COSA QUE PODRIAMOS PONER EN LAS PROMESAS ES QUE UN METODO TARDASE UN TIEMPO
+SI EN EL return INDICAMOS UN   setTimeout Y LE PONEMOS UNA FUNCION DE CALLBACK 
+setTimeout(function(){
+
+},3000); ESTO SON 3 SEGUNDOS ESTO ES LO QUE VA TARDAR EN PROCESAR EL JSON  -->
+
+return new Promise((resolve, reject) => {
+  var profesor_string = "";
+  setTimeout(function(){
+    var profesor_string = JSON.stringify(profesor);
+    if (typeof profesor_string != 'string' || profesor_string == '') return reject('error 1');
+
+    return resolve(profesor_string);
+  }, 3000);
+});
+
+
+
+
+
+<!-- AHORA VEREMOS COMO LANZAR LA PROMESA -->
+<!--   LO QUE QUEREMOS MOSTRAR CON ESTO ES SABER QUE LAS PROMESAS SE ESTAN ESPERANDO A QUE SE PROCESE CIERTO CODIGO O CIERTA LOGICA,
+   O CIERTAS LLAMADAS ASINCRONAS AL SERVIDOR O CIERTO PROCESAMIENTO DE CUALQUIER COSA  -->
+
+getUsuarios()
+  .then(data => data.json()) 
+  .then(users => { 
+  
+    listadoUsuarios(users.data);
+
+/*     return getJanet();
+    return getInfo();
+  })
+  .then(data => {
+    console.log(data);
+    
+    return getJanet();
+  })
+  .then(data => data.json())
+  .then(user => {
+    mostrarJanet(user.data);
+  })
+
+
+</body>
+</html>

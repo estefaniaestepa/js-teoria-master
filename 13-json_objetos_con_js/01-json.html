@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <!--   JSON (JAVASCRIPT OBJECT NOTATION) OBJETOS CON JS  -->
+
+<!--   NOTACION DE OBJETOS CON JS Y NOS PERMITE CREAR OBJETOS
+  ESTA CLASE DE OBJETOS NOS PERMITE HACER ARRAYS ASOCIATIVOS DENTRO DE JS Y NOS PERMITE ESTRUCCTURAR LOS DATOS -->
+
+<!--   UN JSON EN JS SE DEFINE CON {} Y LE VAMOS INDICANDO LAS PROPIEDADES QUE VA A TENER
+  ES DECIR {} LE PONEMOS UN NOMBRE A LA PROPIEDAD Y LE ASIGANMOS UN VALOR A CADA UNA DE ESAS PROPIEDADES Y TODO SEPARAR POR ,  -->
+  var pelicula= {
+    titulo: 'batman vs Suerman',
+    year: 2017,
+    pais: 'Estados Unidos'
+  };
+
+
+
+<!--   YA TENEMOS NUESTRO ONJETO JSON, COMO ACCEDEMOS A LAS PROPIEDADES DE MI OBJETO
+  HAREMOS UN -->
+   console.log (pelicula);
+
+
+<!--   EN LA CONSOLA NOS APARECE NUESTRO OBJET LE DAMOS Y VEMOS EL JSON
+  SI QUEREMOS ACCEDER A LA PROPIEDAD EN LA CONSOLA ESCRIBIREMOS pelicula.titulo EL . SIRVE PARA ACCEDER A UNA PROPIEDAD DE UN OBJETO Y CON ESTO YA PONEMOS EL NOMBRE DE LA PROPIEDAD
+  Y NOS SACARA EN ESTE CASO 'batman vs Suerman', -->
+
+
+
+<!--   SI QUISIERAMOS CAMBIAR EL VALOR DE UNA PROPIEDAD PONDRIAMOS LO SIGUIENTE  -->
+  pelicula.titulo = "Superman Begins";
+
+
+
+<!--   TAMBIEN PODRIAMOS TENER UN ARRAY DE PELICULAS, ASI PODRIAMOS IR CREANDO OBJETOS INCLUSO PODRIAMOS METER EL OBJETO DE PELICULA-->
+  var peliculas =[
+  {titulo: "La verdad duele", year: 2016, pais: "Francia"},
+pelicula
+];
+
+console.log (pelicula); <!-- SI ESTO LO MOSTRAMOS EN LA CONSOLA YA VEREMOS QUE TENEMOS DOS ELEMENTOS Y ESTO YA ES UNA COLECCION DE OBJETOS -->
+
+
+
+<!-- AHORA HAREMOS UN BUCLE FOR Y CREAREMOS UN DIV DE PELICULAS EN NUESTRO <HTML></HTML> DENTRO DE ESTE DIV METER TODAS MIS PELICULAS EN JS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de JS</title>
+
+</head>
+<body>
+  <h1>JSON</h1>
+  <div id="peliculas">
+    <h2>Peliculas</h2>
+  </div>
+  <script type="text/javascript" src="js/33-json.js"></script>
+</body>
+</html>
+
+<!-- JS METEREMOS TODAS LAS PELICULAS DEL DIV DENTRO DE UN OBJETO JSON CARGAREMOS EL <script></script> ABAJO DE LA PAGINA JUSTO CUNADO ACABA EL </body> PARA QUE ENCUENTRE ESE <div>-->
+var caja_peliculas = document.querySelector("#peliculas");
+var index;
+for (index in peliculas){
+  var p = document.createElement("p");<!-- ENTONCES POR CADA PELICULA QUE YO ENCUENTRE HAREMOS UNA VARIABLE Y CREAREMOS UN ELEMENTO UN PARRAFO ("P") -->
+  p.append(peliculas[index].titulo + " - "+ peliculas[index].year);<!-- VAMOS HACERLE UN APPEND Y LE AÑADIREMOS PELICULAS Y COGEMOS EL INDICE .index Y COGEMOS LA PROPIEDAD QUE QUERAMOS EN ESTE CASO .titulo PODRIAMOS CONCATENAR EL AÑO + " - "+  PONDREMOS peliculas[index] PARA COGER EL INDICE EN EL QUE ESTAMOS RECORRIENDO EL ARRAY Y ACCEDEMOS AL OBJETO Y A LA PROPIEDAD .year -->
+  caja_peliculas.append(p);<!-- DE ESTA MANERA A caja.peliculas LE HACEMOS EL .append DEL PARRAFO (p)-->
+}
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

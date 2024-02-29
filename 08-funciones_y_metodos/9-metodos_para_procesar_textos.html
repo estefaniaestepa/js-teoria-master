@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <!--  METODOS PARA PROCESAR TEXTOS -->
+
+  <!--  TRANSFORMACION DE TEXTOS -->
+<!--   VAMOS A VER COMO TRANSFORMAR EL NUMERO A UN STRING -->
+<!-- UTILIZANDO EL METODO .toString ES UNA FUNCION QUE RECIBE COMO PARAMETRO ESE VALOR, CON ESTO YA SE CONVIERTE -->
+
+  var numero= 444;
+  var texto1= "Bienvenido al cuerso de JavaScript";
+  var texto2= "Es muy buen curso";
+
+  var dato = numero.toString();<!--  LO PODEMOS METER DENTRO DE UNA VARIABLE , ESTO CONVIERTE EL NUMERO EN UN STRING-->
+      dato = texto1.toUpperCase();<!-- ESTO CONVIERTE EL TEXTO DE MINUSCULAS A MAYUSCULAS  -->
+      dato = texto2.toLowerCase();<!--  LO CONVIERTE EN MINUSCULA -->
+  console.log (dato);
+ <!--  SI LE PONEMOS typeof YA SABEMOS QUE ESE DATO ES UN STRING -->
+
+
+<!-- CALCULAR LA LONGITUD QUE TIENE UN TEXTO -->
+<!-- ESTO ES MUY UTIL PARA SABER SI EXISTE UN TEXTO Y TIENE ALGO DENTRO -->
+<!-- CON LA PROPIEDAD  .length SIRVE PARA CONTAR COSAS, CUENTA LA CANTIDAD DE ELEMENTOS QUE HAY DENTRO DE ALGO (YA SEA DENTRO DE UN STRING, ARRAY...) -->
+
+var nombre ="Estefania Estepa";
+    nombre=["Hola", "Hola"]; <!-- SI TUVIERAMOS UN ARRAY EN LA CONSOLA NOS DIRÁ QUE TENEMOS DOS ELEMENTOS, PORQUE ESTA ASOCIADA AL .length   -->
+
+console.log (nombre.length);<!--  CON ESTO PODEMOS CONTRA CUANTAS LETRAS TIENE UN STRING -->
+
+
+
+<!-- VAMOS A VER COMO CONCATENAR - ES UNIR TEXTOS -->
+var texto1= "Bienvenido al cuerso de JavaScript"; <!-- TENEMOS LAS VARIABLES TEXTO1 Y TEXTO2 -->
+var texto2= "Es muy buen curso";
+var textoTotal= texto1 + " " + texto2; <!-- CREAMOS LA VARIABLE TEXTOTOTAL Y CONCATENAMOS LAS VARIABLES DE TEXTO1 Y TEXTO2 (SI QUEREMOS PONER ESPACIOS CON EL OPERADOR + VOLVEMOS A UNIR ESOS TEXTOS CON UN ESPACIO EN MEDIO) -->
+
+console.log(textoTotal);
+
+
+<!-- HAY OTRO METODO PARA CONCATENAR TEXTOS -->
+
+var textoTotal= texto1.concat ( " " +texto2); <!-- CREAMOS UNA VARIABLE Y PODEMOS UTILIZAR EL METODO concat SOBRE UNA VARIABLE , EN ESTE CASO TENEMOS LA VARIABLE TEXTO UNO Y LE PODEMOS CONCATENAR CUALQUIER COSA (UTILIZAMOS EL OPERADOR + PARA METER OTRO TEXTO) -->
+
+console.log(textoTotal); 
+
+<!-- PARA QUE PUEDE SER UTIL ESTO, PUES POR EJEMPLO CUANDO GENERAR UN TEXTO Y TENEMOS VARIOS TEXTOS ANTERIORES Y AL HACER UN BUCLE PODEMOS UTILIZAR ESTE METODO CONCAT -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<!-- FUNCIONES DENTRO DE OTRAS -->
+
+<!--   UNA FUNCION NO TIENE PORQUE SER ENORME, ES DECIR YO PUEDO TENER MUCHAS FUNCIONES Y ESAS FUNCIONES QUE SE ESTÉN LLAMANDO DENTRO DE OTRAS FUNCIONES -->
+
+<!-- POR EJEMPLO: -->
+
+
+Function calculadora(numero1, numero2, mostrar =false) { <!--  TODO ESTO QUE TENEMOS AQUI ES UN TROZO DE CODIGO QUE NOS MUESTRA LAS COSAS EN UN CONSOLE.LOG -->
+
+  if(mostrar == false){ 
+  console.log("Suma:" + (numero1 + numero2));
+  console.log("Resta:" + (numero1 - numero2));
+  console.log("Multiplicacion:" + (numero1 * numero2));
+  console.log("Division:" + (numero1 / numero2));
+ console.log(mostrar); 
+console.log("**********************************************************");
+}else{
+  document.write("Suma:" + (numero1 + numero2)+ "<br>"); <!--  OTRO QUE NOS MUESTRA LAS COSAS EN UN DOCUMENT.WRITE -->
+  document.write("Resta:" + (numero1 - numero2)+ "<br>");
+  document.write("Multiplicacion:" + (numero1 * numero2)+ "<br>");
+  document.write("Division:" + (numero1 / numero2));
+  document.write("**********************************************************"); 
+}
+} 
+<!-- ESTO ES MUCHO CODIGO PARA TENERLO EN UNA SOLA FUNCION  -->
+PODEMOS HACER LO SIGUIENTE 
+
+
+function porConsola(numero1, numero2) {<!-- { PODEMOS INDICAR QUE ESTA FUNCION NOS LA MUESTRE POR CONSOLA  -->
+  console.log("Suma:" + (numero1 + numero2));
+  console.log("Resta:" + (numero1 - numero2));
+  console.log("Multiplicacion:" + (numero1 * numero2));
+  console.log("Division:" + (numero1 / numero2));
+  console.log(mostrar);
+  console.log("**********************************************************");
+}
+
+function porPantalla(numero1, numero2) { <!-- LUEGO TENER OTRA FUNCION QUE SE LLAME POR PANTALLA -->
+  document.write("Suma:" + (numero1 + numero2) + "<br>");
+  document.write("Resta:" + (numero1 - numero2) + "<br>");
+  document.write("Multiplicacion:" + (numero1 * numero2) + "<br>");
+  document.write("Division:" + (numero1 / numero2));
+  document.write("**********************************************************");
+}
+
+
+function calculadora(numero1, numero2, mostrar = false) {<!--  DE FORMA QUE EN LA FUNCION PRINCIPAL QUE ES LA QUE HACE LA LOGICA MÁS GORDA O QUE TIENE O QUE TIENE ESTA CONDICION,  -->
+
+  if (mostrar == false) {
+porConsola(numero1, numero2); <!-- YO PUEDO INVOCAR AL METODO POR CONSOLA Y PASARLE LOS PARAMETROS NUMERO1 Y NUMERO2 QUE SON LOS NUMEROS CON LOS QUE REALMENTE TIENEN QUE HACER LAS OPERACIONES -->
+  } else {
+   porpantalla (numero1, numero2); <!-- Y DE LA MISMA FORMA POR LA OTRA PARTE  -->
+    }
+    return "true"; <!-- Y HACER UN RETURN TRUE -->
+} 
+
+calculadora(1, 4);
+calculadora(2, 5, true); 
+
+<!-- SIMPLEMENTE CON ESTO ESTAMOS LLAMANDO A LA FUNCION PRINCIPAL QUE ES CALCULADORA QUE A CIERTA LOGICA HACE UN IF, UN ELSE QUE COMPUEBA CIERTAS COSAS Y QUE INVOCA A OTRAS FUNCIONES -->
+</body>
+</html>

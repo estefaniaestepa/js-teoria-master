@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<!--   PARAMETROS OPCIONALES -->
+<!-- LOS PARAMETROS OPCIONALES NO SON OBLIGATORIOS EL PASARLES UN RESULTADO SI NO QUE YA VIENEN INICIALIZADOS A ALGO POR DEFECTO -->
+
+
+
+<!-- LO VEREMOS SIGUIENDO EL EJERCECIO DE PARAMETROS -->
+
+function calculadora(numero1, numero2, mostrar =false) { <!-- VAMOS A CREAR UN NUEVO PARAMETRO LLAMADO MOSTRAR QUE POR DEFECTO VA A VENIR A FALSE, ESTE PARAMETRO NO TENEMOS PORQUE PASARLO  POR LA CALCULADORA PORQUE YA VA A TENER UN RESULTADO DENTRO CON EL CONSOLE.LOG -->
+
+  if(mostrar == false){ <!-- PONDREMOS UN IF PARA DECIR SI MOSTRAR ES FALSE, QUE NOS LO MUESTRE TODO EL RATO POR LA CONSOLA , ESTO ES UN BULEANO FALSO-->
+  console.log("Suma:" + (numero1 + numero2));
+  console.log("Resta:" + (numero1 - numero2));
+  console.log("Multiplicacion:" + (numero1 * numero2));
+  console.log("Division:" + (numero1 / numero2));
+<!--   console.log(mostrar); --> <!-- ESTO YA LO INDICA DIRECTAMENTE EN LA CONSOLA, NO TENEMOS QUE HACER NADA PARA QUE ESE VALOR ESTE INICIALIZADO -->
+  console.log("**********************************************************");
+  }
+}else{ <!-- Y SI NO QUEREMOS QUE NOS MUESTRE ESTO EN EL CUERPO DE LA PAGINA -->
+  document.write("Suma:" + (numero1 + numero2)+ "<br>");
+  document.write("Resta:" + (numero1 - numero2)+ "<br>");
+  console.write("Multiplicacion:" + (numero1 * numero2)+ "<br>");
+  console.write("Division:" + (numero1 / numero2));
+  console.write("**********************************************************");
+}
+calculadora(1, 4);  <!-- CUANDO LLAMAMOS A LA FUNCION CALCULADORA ES OBLIGATORIO QUE LE PASEMOS LOS DOS PARAMETROS QUE TENEMOS EL PARAMTERO NUMERO1 Y EL PARAMETRO NUMERO2, SI NO NOS FALLARIA Y NOS ESCUPIRIA UN ERROR -->
+calculadora(2, 5, true); <!-- SI LLAMAMOS DE NUEVO A LA CALCULADORA Y ADEMAS PONEMOS UN TRUE ESTO NOS LO MOSTRARA EN LA PANTALLA EN EL BODY DEL HTML -->
+
+<!-- DE ESTA MANERA PODEMOS REUTILIZAR LA FUNCION TANTAS VECES COMO QUERAMOS 
+PORQUE EN FUNCION DE LOS PARAMETROS QUE LE ESTAMOS PASANDO Y DEL PARAMETRO OPCIONAL (MOSTRAR=FALSE), QUE ACTUA COMO FLAG (UN FLAG ES UNA VARIABLE QUE DA TRUE O FALSE), EN FUNCION DE LO QUE TIENE HACE UNA COSA U OTRA
+EN FUNCION DE LOS PARAMETROS EL RESULTADO Y LA FUNCIONALIDAD QUE HAGA ES FUNCION ES COMPLETAMENTE DIFERENTE
+ -->
+</body>
+</html>

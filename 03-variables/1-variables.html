@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!--   VARIABLES COMO FUNCIONAN
+
+  CREAREMOS NUESTRPO ARCHIVO .HTML Y .JS
+  UNA VARIABLE ES UN CONTENEDOR DE INFORMACIÓN, SON CADENAS DE TEXTO, LA VARIABLE TIENE QUE TENER UN NOMBRE Y TIENE QUE SER LO MAS CLARO Y DESCRIPTIVO DE LO QUE VAMOS HACER -->
+  <!-- EL NOMBRE ES MUY IMPORTANTE -->
+
+  var pais = "España";
+  var continente = "Europa";
+  var antiguedad = 2019;
+
+  console.log (pais, continente, antiguedad);
+
+  <!-- CONCATENAR DOS SCRIPTS
+  ES DECIR UNA UNIÓN DE DOS CADENAS DE TEXTO EN UNA SOLA, SE PONDRA EN LA VARIABLE -->
+  <!--   EL OPERADOR (+) A PARTE DE SER UN OPERADOR DE SUMA TAMBIEN ES UN OPERADOR DE CONCATENACION -->
+  var dos-nombres = var.1 + ' ' +var.2;
+
+  <!--   LUEGO CREAREMOS UN ALERT -->
+  alert (); <!-- PARA QUE SE MUESTRE EN LA CONSOLA -->
+
+  var pais = "España";
+  var continente = "Europa";
+  var antiguedad = 2019;
+  var pais_y_continente = pais +' ' + continente;
+
+  console.log (pais, continente, antiguedad);
+  alert (pais_y_continente);
+
+  <!-- CONSOLA
+SI HACEMOS UN CONSOLE.LOG EN LA CONSOLA, SI LE CAMBIAMOS EL VALOR DE LO QUE TENIAMOS AUTOMATICAMENTE CAMBIA EL VALOR -->
+  conlole.log (antiguedad) <!-- esto es lo que indicamos en la consola -->
+  2019 este es el valor que tenemos en nuestro archivo .js
+
+  antiguedad = 2030; <!-- si le cambiamos el valor automáticamente cambia -->
+
+  <!--   SI QUEREMOS CAMBIAR EL CONTENIDO A UNA VARIABLE DESDE EL ARCHIVO JS
+  NO HACE FALTA QUE LE INDIQUEMOS YA LA VAR -->
+
+  var pais = "España";
+  var continente = "Europa";
+  var antiguedad = 2019;
+  var pais_y_continente = pais +' ' + continente;
+
+  pais= "Mexico"; <!-- EN NUESTRA CONSOLA CAMBIARÁ A ESTOS DOS VALORES PAIS Y CONTINENTE -->
+  continente= "Latinoamerica"
+  <!-- var pais_y_continente = pais +' ' + continente; SI ESTO LO PONEMOS DEBAJO SI QUE NOS VA A SALIR MEXICO Y LATINOAMERICA -->
+
+  console.log (pais, continente, antiguedad);
+  alert (pais_y_continente);
+  <!-- PERO EL ALERT NO CAMBIA YA QUE EL VALOR DE LAS VARIABLES DE PAIS Y CONTINENTE ES EL MISMO AL IGUAL QUE pais_y_continente EL VALOR DEL ALERT SE MANTIENE -->
+
+
+  <!-- MODO ESTRICTO
+ESTE MODO PERMITE QUE NUESTRA PROGRACIÓN LO HAGAMOS CON MEJORES PARCTICAS Y SEA MUCHO MAS ESTRICTAS Y ACTIVAR FUNCIONALIDADES NUESTAS DE JS
+'use strict' LO INDICAREMOS EN LA PARTE DE ARRIBA EN TODOS NUESTROS ARCHIVOS -->
+
+  'use strict'
+
+  var pais = "España";
+  var continente = "Europa";
+  var antiguedad = 2019;
+  var pais_y_continente = pais +' ' + continente;
+
+  pais= "Mexico";
+  continente= "Latinoamerica"
+
+
+  console.log (pais, continente, antiguedad);
+  alert (pais_y_continente);
+
+  <!-- SI COMENTAMOS USE STRICT , PODEMOS PONER LAS VARIABLES SIN LA PALABRA VAR -->
+  /* 'use strict' */<!-- AUTOMATICAMENTE EL CODIGO INTERPRETA QUE ESO ES UNA VARIABLE -->
+
+  pais = "España";
+
+  <!--   PERO SI ACTIVAMOS EL MODO STRICT QUE NO ESTÁ COMENTADO NOS DARÁ UN ERROR, NOS DIRÁ QUE LA VARIABLE NO ESTÁ DEFINIDA
+  TENDREMOS QUE DEFINIRLA -->
+  var=pais; <!-- CREAMOS LA VARIABLE -->
+  pais = "España"; <!-- LUEGO LE ASIGNAMOS UN VALOR -->
+
+</body>
+
+</html>

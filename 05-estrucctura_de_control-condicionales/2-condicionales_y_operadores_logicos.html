@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!--     OPERADORES LOGICOS
+
+    COMO HACER QUE VARIAS CONDICIONES SE CUMPLAN EN UNA MISMA CONDICION
+    ESTO SIRVE PARA NO TENER QUE ESTAR ANIDANDO IF -->
+
+    <!--     HAY VARIOS OPERADORES: -->
+
+    AND (Y): &&
+    <!-- ESTO SIGNIFICA QUE PUEDO HACER UNA CONDICION Y PUEDO INDICARLE EL OPERADOR && Y LUEGO PONERLE OTRA CONDICION AL MISMO IF -->
+    EJEMPLO AND &&
+    var year: 2018 ;
+
+    if(year >= 2000 && year <= 2020){<!-- SI YEAR ES MAYOR O IGUAL A 2000 Y YEAR ES MENOR O IGUAL A 2020 -->
+        console.log:("estamos en la era actual");
+        }else{ <!-- Y SI NO MUESTRAME  -->
+        console.log: ("estamos en la era post moderna")
+        } <!-- EN ESTE CASO NOS DIRA QUE ESTAMOS EN LA ERA ACTUAL YA QUE 2018 ESTA ENTRE EL 2000 Y 2020 -->
+
+        OTRO EJEMPLO:
+        var year: 2018 ;
+
+        if(year >= 2000 && year <= 2020) year !=2018{<!-- SI YEAR ES MAYOR O IGUAL A 2000 Y YEAR ES MENOR O IGUAL A 2020
+            y SI EL AÑO ES DIFERENTE AL 2018 -->
+            console.log:("estamos en la era actual");
+            }else{ <!-- Y SI NO MUESTRAME  -->
+            console.log: ("estamos en la era post moderna")
+            } <!-- EN ESTE CASO NOS DIRA QUE estamos en la era post moderna YA QUE EL AÑO COINCIDE QUE ES 2018  -->
+
+
+            OR (O) || SI ESTO ES MAYOR O IGUAL QUE ESTO || SI ES MENOR O IGUAL A LO QUE SEA
+            EJEMPLO CON OR:
+            var year: 2018 ;
+
+            if(year == 2008 || year ==
+            2018){<!--  SI EL AÑO ES EXACTAMENTE IGUAL A 2008 O ES EXACTAMENTE IGUAL A 2018 EN CONSOLE.LOG SALDRÁ el año acaba en 8" -->
+            console.log("el año acaba en 8");
+            <!-- EN ESTE CASO LA PRIMERA NO SE CUMPLE PERO LA SEGUNDA SI POR LO QUE SI QUE APARECERÁ -->
+            }
+
+            NEGACION = ! ESTO PODEMOS DECIRLE QUE LA EDAD SEA DIFERENTE O PODEMOS NEGAR CUALQUIER EXPRESION
+            EJEMPLO NEGACION !
+            var year: 2018 ;
+
+            if(year !=2016){
+            console.log:("El año no es 2016 realmente es: "+ year);
+            <!-- AQUI DECIMOS QUE SI EL AÑO NO ES 2018 O ES DIFERENTE EN CONSOLE.LOG NOS DIGA El año no es 2016 -->
+            }
+
+
+            <!-- TAMBIEN SE PUEDEN UTILIZAR LOS () PARA DAR PRIORIDAD POR EJEMPLO -->
+            var year: 2018 ;
+
+            if(year == 2008 || (year >= 2018 && year == 2028)){
+            <!-- ESTO QUIERE DECIR QUE SI ES IGUAL A 2008 O SI ES MAYOR O IGUAL A 2018 Y ADEMAS ES EXACTAMENTE IGUAL a 2028 -->
+            console.log("el año acaba en 8");
+            }else{
+            console.log("año no registrado");
+            <!-- EN ESTE CASO SALDRÍA AÑO NO REGISTRADO PORQUE NO SE CUMPLE LA CONDICION SOLO SALDRIA QUE SI SI LA VAR FUESE 2028 -->
+            }
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 
+  OPERADORES BASICOS
+  LOS OPERADORES DENTRO DEL LENGUAJE DE PROGRAMACION ES LO MISMO QUE UN OPERADOR MATEMATICO, PODEMOS HACER DIFERENTES
+  OPERACIONES CON ELLOS
+  CUANDO PONEMOS UN VALOR A UNA VARIABLE DE NÚMERO SIN LAS COMILLAS YA LO COJE COMO SI FUESE UN VALOR ENTERO
+
+  En el caso que fuese un texto lo que haría es interpretar que ese texto es una variable.SI LO PONEMOS ENTRE ""
+  JAVASCRIPT INTERPRETARIA QUE ESO ES UN STRING O UNA CADENA DE TEXT -->
+
+  <!--  SUMA -->
+  var numero1 = 7;
+  var numero2 = 12 ;
+  var operacion = numero1 + numero2 ;<!--  ESTO ES LO QUE HARÁ QUE SUME LAS DOS VARIABLES -->
+
+  alert("El resultado de la operación es : "+ operacion);<!--  PARA CONCATENAR UN STRING UN TEXTO LE PONDREMOS EL OPERADOR + -->
+
+  <!--   RESTA -->
+  var operacion = numero1 - numero2 ;
+
+  <!--   MULTIPLICACIÓN  -->
+  var operacion = numero1 * numero2 ;
+  <!-- 
+  DIVISIÓN -->
+  var operacion = numero1 / numero2 ;
+
+  <!--   PORCENTAGE -->
+  var operacion = numero1 % numero2 ;<!-- LO QUE HACE SACARTE EL RESTO DE LA DIVIDIÓN ENTRE ESAS VARIANTES  -->
+
+
+
+  <!--   TIPOS DE DATOS -->
+  <!-- LOS TIPOS DE DATOS SON EL ENTERO, EL STRING (CADENA DE TEXTO O DE CARACTERES), LA COMA FLOTANTE O EL DECIMAL, EL BULEANO (ES UN TRUE O FALSE), ARRAY Y OBJETOS -->
+
+  var numero_entero = 33;
+  var cadena_texto = 'Hola "que" tal';
+  <!-- "Hola que tal"; /* se pueden usar comillas simples o dobles, las dobles tienen más importancia */ -->
+  <!-- LA COMILLA QUE TIENE PRIORIDAD ES LA QUE UTILIZAMOS AL PRINCIPIO Y AL FINAL. Y LAS COMILLAS QUE CONTENGA LAS VA A INTERPRETAR COMO QUE SON PARTE DEL STRING  -->
+
+  console.log(cadena_texto);
+
+  <!-- BULEANO ESTO SIRVE PARA HACER CONDICIONES-->
+  var verdadero_o_falso= true; <!-- TAMBIEN PUEDE SER UN 1 -->
+  var verdadero_o_falso= false; <!-- EL FALSE ES UN 0 -->
+  console.log(verdadero_o_falso);
+
+  <!-- FUNCIONES PARA CONVERTIR UN DATO A OTRO -->
+  var numero_falso= "7";<!--  si le ponemos un número pero que va entre ""  -->
+
+  console.log(numero_falso);
+  <!--  SI POR EJEMPLO LE PONEMOS UN NÚMERO FALSO MÁS UN NÚMERO NO LO VA A SUMAR LO CONCATENARIA console.log(numero_falso +7); EL RESULTADO SERIA 337 NO HACE LA OPERACION -->
+  <!-- PORQUE NÚMERO FALSO ES UN STRING NO ES UN NÚMERO ENTERO -->
+
+  console.log(number(numero_falso)+7); <!-- SI UTILIZAMOS LA FUNCION NUMBER SI QUE VA HACER LA SUMA Y NOS DARÁ 40 -->
+
+  console.log(parseInt(numero_falso)+7);
+  <!-- ESTA FUNCION LO CONVIERTE A UN NÚMERO ENTERO, ESTE NO TE LO MUESTRA SI TIENES DECIMALES-->
+
+  var numero_falso= "33.4";
+  console.log(parseFloat(numero_falso)+7);
+  <!-- PERMITE CONVERTIR UN NÚMERO A UN NÚMERO DECIMAL, FUNCIONA SI TENEMOS DECIMALES Y NÚMEROS ENTEROS -->
+
+  var numero_entero = 44;
+  console.log(numero_entero+'Texto
+  concatenado');<!--  IMAGINAMOS QUE QUEREMOS CONCATENAR te dirá 44 texto concatenado. LO INDICA CORRECTAMENTE PORQUE UNO ES UN NÚMERO Y EL OTRO UN TEXTO -->
+  console.log(numero_entero+4); <!-- SI TUVIERAMOS UN NÚMERO TAMBIEN LO SUMARIA PORQUE AMBOS SON DE TIPO ENTERO  -->
+
+  console.log(string(numero_entero)+4);
+  <!-- CONVERITIRIAMOS CUALQUIER VARIABLE A UN STRING, OSEA CONCATENIA LOS NÚMEROS Y SALDRÍA 444. LO HA CONVERTIDO A TEXTO Y NO APLICA LA SUMA -->
+</body>
+
+</html>

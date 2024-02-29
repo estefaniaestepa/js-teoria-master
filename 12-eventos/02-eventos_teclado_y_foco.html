@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<!--     EVENTOS DE TECLADO Y FOCO -->
+
+<!-- PARA ESTO CREAREMOS UN NUEVO ELEMENTO EN NUESTRA WEB , VA A SER UN FORMULARIOS DE HTML Y DENTRO DE ESE FORMULARIO TENDREMOS UN INPUT
+DE ESTA MANERA TENEMOS UN NUEVO INPUT Y LO METEREMOS DENTRO DEL PARRAFO -->
+
+
+<title>Hola Mundo</title>
+</head>
+
+<body>
+  <h1>Curso JavaScript</h1>
+  <p>Nuestro primer script en JS</p>
+
+  <p>
+    <button id="boton">Presioname</button> /*esta es la mejor manera*/
+
+  <form>
+    <input type="text" name="nombre" id="campo_nombre">
+  </form>
+</p>
+  <div id="micaja">!Hola soy una caja¡</div>
+
+  <hr>
+
+  <section id="miseccion">
+    <h1 id="encabezado">Listado de textos de los Divs</h1>
+  </section>
+
+  <div class="amarillo">!Soy el primer DIV¡</div>
+  <div class="rojo">!Yo el segundo¡</div>
+  <div class="rojo">!El tercero soy yo¡</div>
+
+
+
+<!--   VEREMOS VARIOS EJEMPLOS -->
+<!-- TODOS LOS EVENTOS QUE TIENEN QUE VER CON PRESIONAR TECLAS Y CON EL FOCO -->
+
+<!-- FOCUS -->
+var input = document.querySelector("#campo_nombre"); <!-- PRIMERO TENEMOS QUE CAPTURAR O SELECCIONAR ESE CAMPO -->
+
+input.addEventListener('focus', function(){<!--  CUANDO HAGAMOS 'focus' EN EL CAMPO ESTAMOS CAPTURANDO EL EVENTO focus DEL CAMPO input CUYO ID TIENE #campo_nombre -->
+console.log ("[focus] Estas dentro del input"); <!-- PODEMOS INDICAR AL EVENTO QUE SE ESTA LANZANDO HAREMOS CONSOLE.LOG PARA COMPROBAR CADA UNO DE NUESTROS EVENTOS ESTO APARECE EN LA CONSOLA-->
+
+});
+
+
+
+<!-- BLUR -->
+input.addEventListener('blur', function(){ <!-- ES IGUAL QUE EL FOCUS SOLAMENTE CUANDO SALIMOS DEL FOCO -->
+console.log ("[blur] Estas fuera del input"); <!-- PODEMOS INDICAR AL EVENTO QUE SE ESTA LANZANDO, HAREMOS CONSOLE.LOG PARA PROBAR CADA UNO DE NUESTROS EVENTOS, ESTO APARECE EN LA CONSOLA  -->
+
+});
+
+
+
+<!-- KEYDOWN -->
+input.addEventListener('keydown', function(event){ <!--SUCEDE CUANDO ESTAS PULSANDO UNA TECLA  CAPTURAMOS LO QUE PASE EN EL EVENTO  CON function LE PASAMOS EL PARAMETTRO event-->
+console.log ("[keydown]Pulsando esta tecla ", string.fromCharCode(event.keyCode));<!--  HAREMOS CONSOLE.LOG PY PODMEOS SACAR LA TECLA Y CONCATENAREMOS EL string.fromCharCode ESTO SIRVE PARA CAPTURAR COSAS DEL TECLADO Y CAPTURAMOS LO QUE PASE EN EL EVENTO (event.keyCode) DE ESTA MANERA SABEMOS QUE TECLA ESTAMOS PULSANDO
+fromCharCode ESTO LO QUE HACE CONVERTIR A UN STRING  .keyCode TODAS LAS TECLAS QUE PULSAMOS EN EL INPUT LAS VA CAPTURANDO, NOS APARECE EN LA CONSOLA  -->
+
+});
+
+
+
+<!-- KEYPRESS -->
+input.addEventListener('keypress', function(event){<!--  EL kepress ES CUANDO PULSAS LA TECLA -->
+console.log ("[keypress]Tecla presionada ", string.fromCharCode(event.keyCode));
+
+});
+
+
+
+<!-- KEYUP -->
+input.addEventListener('keyup', function(event){ <!-- NOS PERMITE CAPTURAR EL EVENTO CUANDO LEVANTAMOS EL DEDO DE LA TECLA -->
+console.log ("[keyup]Tecla soltada ", string.fromCharCode(event.keyCode));
+
+});
+
+
+
+</body>
+</html>

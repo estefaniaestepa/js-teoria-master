@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+<!--     TIMERS -->
+
+<!-- FUNCIONES DE TIEMPO O LOS TEMPORIZADORES O LOS TIMERS
+ESTAN LAS FUNCIONES SET INTERVAL Y SET TIME OUT -->
+
+
+<!-- EN ESTE CASO EN NUESTRO JS PONDREMOS 'use strict' Y LA FUNCION DE 'load' con callback
+'use strict'
+
+window.addEventListener('load', function(){
+/*TIMERS*/
+/*DENTRO DE AQUI VA TODO EL CODIGO JS*/
+}); -->
+
+
+
+
+<!-- TIMERS - SET INTERVAL -->
+<!-- VEREMOS UN EJEMPLO -->
+
+function intervalo(){
+
+var tiempo= setTime(function(){
+    });
+var tiempo= setInterval(function(){<!-- NOS PERMITE EJECUTAR UNA FUNCION DE CALLBACK O EJECUTAR UN TROZO DE CODIGO CADA X SEGUNDOS. HAREMOS UNA VARIABLE Y UTILIZAREMOS EL setInterval  -->
+console.log("Set interval ejecutado");
+
+var encabezado= document.querySelector("h1"); <!-- CUANTO MENOS ACCESO AL DOM TENGAMOS ES MEJOR POR LO QUE ES ACONSEJABLE INDICAR UNA SOLA VEZ EL .querySelector -->
+if(encabezado.style.fontSize == "50px"){ <!-- ESTO LO CAMBIARA EN EL PRIMER H1 DE NUESTRO HTML QUE ENCUENTRE -->
+    encabezado.style.fontSize = "20px";
+    }else{
+        encabezado.style.fontSize = "50px";
+    } <!-- DE ESTA MANERA EL ENCABEZADO ESTARA PARPADEANDO CADA 3 SEGUNDOS Y CAMBIARA DE TAMAÑO -->
+}, 3000); <!-- COMO SEGUNDO PARAMETRO A LA FUNCION setInterval LE INDICAMOS EL TIEMPO (ESTO SIGNIFICA CADA 3 SEGUNDOS, ESTO SE EJECUTA EN LA CONSOLA ) -->
+return tiempo;
+}
+
+var tiempo = intervalo;<!--  CREAREMOS UNA VARIABLE TIEMPO QUE VA A INVOCAR AL INTERVALO Y ESTO VA A DEVOLVERME EL setInterval -->
+var stop= document.querySelector ("#stop"); <!-- CON ESTA FUNCION DEJAMOS QUE HAGA LOS INTERVALOS DE TAMAÑO Y TIEMPO QUE LE HEMOS PUESTO CON LA FUNCION setInterval -->
+stop.addEventListener ("click", function(){ <!-- CUANDO YO LE DE STOP , 'click' SE VA A EJECUTAR UNA FUNCION DE CALLBACK -->
+alert ("Has parado el intervalo en bucle"); <!-- CUANDO LE DEMOS AL BOTON DE STOP Y EN EL ALERT ACEPTAR PARARA EL INTERVALO Y DEJARA DE FUNCIONAR -->
+clearInterval (tiempo); <!-- VAMOS A EJECUTAR UN METODO QUE SE LLAMA clearInterval COMO PARAMETRO LE TENEMOS QUE PONER LA VARIABLE DE setInterval -->
+});
+var start= document.querySelector ("#start"); 
+start.addEventListener ("click", function(){
+    alert ("Has iniciado el intervalo en bucle");
+    intervalo();
+});
+
+
+<!-- PODEMOS TENER UN BOTON PARA PARAR ESTA FUNCION, ESTA ETIQUETA LA CREAREMOS EN NUESTRO <HTML></HTML> -->
+<body>
+    <h1>Curso JavaScript</h1>
+    <p>Nuestro primer script en JS</p>
+  
+    <p>
+      <button id="boton">Presioname</button> <!-- esta es la mejor manera -->
+      <button id="start">Start</button><!--  este boton inicia el parpadeo -->
+      <button id="stop">Stop</button><!--  este boton para el parpadeo -->
+  
+    <form>
+      <input type="text" name="nombre" id="campo_nombre">
+    </form>
+  
+  </p>
+
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mi primera WEb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- LOS COMENTARIOS DE TEXTO NO SE MUESTRAN EN LA WEB, INDICAN UNA EXPLICACIÓN QUE HAY EN EL CÓDIGO -->
+<!-- SI PONER CONTRO+U SI VES LOS COMNETARIOS -->
+
+
+<body><!--  es el cuerpo de la pagina web, todo lo que queramos añadir lo añadiremos desde el body -->
+  <etiqueta atributo="valor">Texto</etiqueta>
+
+
+  <!--  EIQUETAS PARA TEXTO -->
+  <!-- HTML no tiene contenido visual eso lo haremos desde el CSS -->
+
+  <h1>Titulo</h1> <!-- encabezado, de haber 1 en la pagina web -->
+  <h2>Hola</h2> <!-- subtitulo, pueden haber varios en la web, hay desde h1 hasta h6 -->
+  <h3></h3>
+  <h4></h4>
+  <h5></h5>
+  <h6></h6>
+  <p></p> <!-- la etiqueta parrafo la utilizamos para texto, podemos utilizar Loren Ipsum para pegar párrafos -->
+  <br> <!-- etiqueta de salto de linea, no tiene ningún contenido, se puede utilizar tantas veces como queramos
+  la podemos utilizar dos veces y serán dos saltos -->
+  <hr /> <!-- te hace un salto de linea, pero dibujando una línea completa, se puede utilizar varias veces.
+  También se puede utilizar como separador. -->
+  <strong>Hola mundo desde HTML</strong> <!-- /* su contenido lo convierte en texto en negrita*/ -->
+  <em></em> <!-- nos va a poner un texto en cursiva -->
+  <span id="resaltado" class="rojo amarillo"></span> <!-- es una etiqueta que no hace ninguna acción ante el texto
+  pero le podemos poner un identificador id="" y una clase class=""
+  luego a través de CSS le podemos cambiar los estilos -->
+  <i></i><!-- también pone el texto en cursiva pero es mejor em -->
+
+  <blockquote></blockquote> <!-- es un texto que aparece en formato de cita, es decir 
+aparece con una tabulaciòn especial y un espaciado especial -->
+
+
+
+
+  <!-- LISTAS -->
+
+  <!-- DENTRO DE UNA WEB PODEMOS TENENER UN LISTADO CON UNA INFORMACIÓN RECOPILADA
+EL OBJETIVO PRINCIPAL ES TENER UNA SERIE DE INFOMACIÓN CONJUNTA O UNA SERIE DE DATOS
+HAY DOS TIPOS DE LISTAS:LAS ORDENADAS Y LAS DESORDENADAS
+
+-LAS ORDENADAS -->
+  <ol></ol> <!-- se abren con esta etiqueta, aparece una lista con números  -->
+  <li></li>
+  <!-- Para crear los elementos de la lista se hace con la etiqueta, dentro crearemos el emento de la lista  -->
+  <h3></h3> <!-- lo podríamos utilizar como título de la lista -->
+
+  <!-- LISTA DESORDENADA -->
+  <ul></ul><!--  aparece una lista con puntos, también podmeos poner sublistas dentro de un  -->
+  <li></li>
+  <!-- las sublistas se mostrarán con un formato ordenado y tabulado, apra ello crearemos otro elemento dentro de la lista -->
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+  <!-- TAMBIÉN SE PUEDE UTILIZAR EN UNA WEB PARA HACER EL MENÚ DE NAVEGACIÓN -->
+
+
+
+  <!-- IMÁGENES
+
+    Meteremos las imágenes dentro de nuestra carpeta de Web y la llamaremos IMG
+Aprederemos a incrustar imágenes -->
+  <img> <!-- se utiliza para meter imágenes, esta etiqueta no tiene ningún contenido de texto.
+ESTA ETIQUETA TIENE VARIOS ATRIBUTOS IMPORTANTES -->
+  alt="" <!-- le indicaremos el texto para cuando la imagen no cargue, es para describir lo que tiene la imagen. -->
+  title=""
+  <!-- también sería para cuando pasemos encima de la imagen nos salga un pequeño pop up, que nos diga que es esa imagen -->
+  src="" <!-- lo utilizaremos para indicar la ruta de donde tenemos nuestra imagen, lo mejor es buscarla por una ruta relativa si esta dentro de nuestra carpeta le pondremos img/
+-->
+  width="" <!-- le indicaremos la anchura -->
+  height="" <!-- esto es para la altura -->
+  <!-- lo mas correcto es tocar una de las dos opciones para que la imagen no se deforme -->
+  <img src="img/ruta de la imagen.jpg" alt="titulo/texto" title="titulo/texto" width="anchura">
+
+
+
+
+  <!-- TABLAS
+LAS TABLAS NOS VAN A SERVIR PARA DIBUJAR EN LA PANTALLA UNA TABLA, TIPICA DE CONTENIDO EN LA CUALES VAMOS A TENER FILAS Y COLUMNAS -->
+
+  <h3></h3> <!-- lo podríamos utilizar como título de la tabla -->
+  <!-- LAS TABLAS SE HACEN CON DIFERENTES ETIQUETAS -->
+  <table></table> <!-- es la eiqueta principal de una tabla -->
+  <tr></tr> <!-- esto es la etiqueta de FILAS -->
+  <td></td> <!-- esto es la etiqueta de columnas -->
+  <!-- podmeos crear las filas y columnas que queramos pero tienen que tener el mismo contenido de columnas -->
+  border="" <!-- este atributo es para hacer los bordes de la tabla, le podemos indicar "1" -->
+  <th></th> <!-- nos pinta en negrita los encabezados -->
+  colspan="2"<!--  se le aplica a los TD para expandir la columna tantas columnas como queramos, 
+tendrá un tamaño de dos columnas -->
+
+  <h3>Tablas</h3>
+  <table border="1">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>País</th>
+    </tr>
+    <tr>
+      <td>Estefania</td>
+      <td>Estepa</td>
+      <td>España</td>
+    </tr>
+    <tr>
+      <td>Gabriel</td>
+      <td>Estepa</td>
+      <td>España</td>
+    </tr>
+  </table>
+
+
+
+  <!-- FORMULARIOS
+SE PUEDEN UTILIZAR PARA ENVIAR INFORMACIÓN AL SERVIDOR, TAMBIÉN PARA QUE EL USUARIO ENVÍE SU INFORMACIÓN -->
+
+  <h3></h3> <!-- lo podríamos utilizar como título del formulario -->
+  <form></form><!--  la utilizaremos para crear el formulari -->
+  action="" <!-- se utiliza para indicarle donde va el formulario -->
+  method="" <!-- se utiliza para indicarle el método htpp vamos a utilizar -->
+  <label></label><!--  esto va a ser el nombre que va a tener ese campo visualmente en la página -->
+  for="" <!-- aqui le pondremos el mismo nombre que el name -->
+  <imput type="text" /> <!-- esto es un imput de tipo texto, esta etiqueta se cierra así poque no tiene ningún contenido
+  name="" es recomendable ponerle un name al campo del formulario y indicarle a que campo va este label con un for -->
+  paceholder="" <!-- permite tener un texto que cuando escribamos algo desaparece -->
+
+  <textarea></textarea><!--  este campo tambien le podemos poner un nombre  -->
+  name="" <!-- también le podemos indicar su --> <label></label>
+  <P></P>
+  <!-- podemos poner esta etiqueta por cada imput para que quede más organizado, esto hace que nos meta un enter en cada uno de los campos  -->
+  <!-- NO HAY QUE PONER TILDES EN LOS NOMBRES DE LAS COSAS -->
+
+  <imput type="radio" /> <!-- los radio button sería para seleccionar una opcion de x opciones -->
+  name="" <!-- le pondremos un nombre  al imput-->
+  value=""<!--  siempre tienen que tener un valor. -->
+
+  <select></select> <!-- este campo es lo que va a tener diferentes opciones para seleccionar -->
+  name="" <!-- le pondremos un nombre al select -->
+  <option></option> <!-- para meter las diferentes opciones -->
+  value="" <!-- también le pondremos un value -->
+
+  <imput type="submit" /> para pintar un botón
+  value="" <!-- también le pondremos un value de enviar -->
+
+  <h3>Formulario</h3>
+  <form>
+    <P>
+      <label for="nombre">Nombre</label>
+      <imput type="text" name="nombre" placeholder="escribe tu nombre" />
+    </P>
+    <P>
+      <label for="descripcion">Descripción</label>
+      <textarea name="descripcion"></textarea>
+    </P>
+    <imput type="radio" name="genero" value="hombre"> Hombre <br />
+      <imput type="radio" name="genero" value="mujer"> Mujer <br />
+        <imput type="radio" name="genero" value="nada"> No definido<br />
+
+          <select name="generodos">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="nada">Nada</option>
+          </select>
+
+          <input type="submit" value="enviar formulario">
+  </form>
+
+
+
+  <!-- MULTIPÁGINAS -->
+  <!-- CREAREMOS DIFERENTES HTML Y LO INDICAREMOS EN EL PRINCIPAL
+PONDREMOS UN ENCABEZADO A LA pagina
+LOS HTML SE TIENEN QUE LLAMAR IGUAL QUE NUESTRA LISTA  -->
+  <!-- HAY QUE COPIAR ESTE MENU EN TODAS LAS PAGINAS QUE TENGAMOS DE HTML -->
+
+  <!--   Menú -->
+  <ul>
+    <li>Inicio</li>
+    <li>Contenidos</li>
+    <li>contacto</li>
+  </ul>
+
+
+  <!--   Menú -->
+  <!--   PODEMOS PONER UN LINK Y ESE SERÍA DONDE ME LLEVARIA A NUESTRO NAVEGADOR -->
+  <ul>
+    <li><a href="https://google.com">Inicio</a></li>
+    <li>Contenidos</li>
+    <li>contacto</li>
+  </ul>
+
+  <!--   Menú -->
+  <ul>
+    <li><a href="index.html">Inicio</a></li> <!-- PODEMOS INDICARLE EL NOMBRE DEL DOCUMENTO HTML -->
+    <li><a href="contenidos.html">>Contenidos</a< /li>
+    <li><a href="contactos.html"></a>contacto</a></li>
+  </ul>
+
+  <!--   Menú -->
+  <ul>
+    <li><a href="index.html" title="Inicio">Inicio</a></li> <!-- ES OPCIONAL PONERLE UN TITULO -->
+    <li><a href="contenidos.html">Contenidos</a></li>
+    <li><a href="contactos.html">contacto</a></li>
+  </ul>
+
+  <!--   Menú -->
+  <ul>
+    <li><a href="index.html" title="Inicio">Inicio</a></li>
+    <li><a href="contenidos.html">Contenidos</a></li>
+    <li><a href="contactos.html">contacto</a></li>
+    <li><a href="https://google.com" target="_blank">cursos online</a></li>
+    <!-- también se le puede poner un enlace externo y utilizar el target para que me abra una nueva página o no -->
+    <!--  normalmente ponemos --> _blank <!-- para que lo abra en una nueva pestaña -->
+    <!--  si queremos estar en la misma pestaña en la que estamos navegando no ponemos esta función -->
+  </ul>
+
+</body>
+
+</html>

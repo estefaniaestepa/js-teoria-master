@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- EN JAVA SCRIPT PODEMOS DEFINIR LAS VARIABLES CON DOS PALABRAS
+LA PALABRA RESERVADA VAR
+LA PALABRA RESERVADA LET , ESTA PALABRA ES MUY TIPICA DE TIPESCRIPT Y AHORA TAMBIEN SE PUEDE UTILIZAR CON JS -->
+  let prueba = "Hola";
+  alert ("Hola");
+
+  <!--   LA DIFERENCIA DE ESTAS PALABRAS RESERVADAS LET Y VAR -->
+
+  <!-- LET PERMITE DEFINIR VARIABLES LIMITANDO SU ALCANCE AL BLOQUE DECLARACIÓN O EXPRESION DONDE SE ESTA USANDO
+VAR DEFINE UNA VARIABLE GLOBAL O LOCAR EN UNA FUNCIÓN SIN IMPORTAR EL AMBITO DEL BLOQUE -->
+
+  <!--   LA PRINCIPAL DIFERENCIA ES EL ALCANCE QUE TIENEN LAS VARIABLES Y COMO ACTUAN EN FUNCION A LOS DIFERENTES BLOQUES -->
+
+
+
+  <!--   PRUEBA CON VAR -->
+  'use strict'
+
+  var numero = 40; <!-- DEFINO ESTA VARIABLE Y TIENE ESTE VALOR -->
+  console.log(numero); <!-- /* si le hago el HTMLFormControlsCollection.log antes el valor es 40 */ -->
+
+  if(true){
+  var numero = 50;
+  <!-- DESPUES LE CAMBIAMOS EL VALOR, EN ESTE BLOQUE DE CODIGO EN ESTA INSTRUCCIÓN, EN ESTA DECLARACIÓN Y ALTERAMOS EL VALORE DE LA VARIABLE A NIGVEL GLOBAL DE FORMA QUE EL VALOR ES 50 SIEMRE -->
+  console.log(numero);<!--  /* si le hago un if despues el valor es 50 */ -->
+  }
+
+  console.log(numero);<!--  /* el valor va a ser 50  PORQUE LE HEMOS ASIGANDO OTRO VALOR A ESA VARIABLE */ -->
+
+
+
+  <!--   /* PRUEBA CON LET */ -->
+
+  var texto ="Curso JS";
+  console.log(texto);<!-- /*  el valor es el mismo "" */ -->
+
+  if(true){
+  ler texto ="Curso Laravel 5";
+  <!-- /* la logica dice que vamos a actualizar el valor de la variable como ha pasado arriba */ -->
+  console.log(texto);<!--  /* el valor  de texto es laravel 5. PERO REALMENTE LET ACTUA A NIVEL DE BLOQUE */ -->
+  } <!-- PERO SIMPLEMENTE LO QUE HACE ES CREAR UNA VARIABLE NUEVA CON UN NUEVO VALOR SOLAMENTE DENTRO DE ESE BLOQUE -->
+
+  console.log(texto); <!-- DE FORMA QUE SI VAMOS DEL IF A UN CONSOLE.LOG EL VALOR VA A SER JS, SERÁ EL PRIMER VALOR -->
+</body>
+
+</html>

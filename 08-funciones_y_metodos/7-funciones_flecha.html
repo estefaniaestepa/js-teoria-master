@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+
+<!--   FUNCIONES FLECHA -->
+<!-- LAS FUNCIONES DE FLECHA ES UNA FORMA DE DEFINIR FUNCIONES DE CALLBACK DE UNA MAERA MAS LIMPIA Y CLARA  -->
+<!-- ES LO MISMO QUE DEFINIR UNA FUNCION ANONIMA PERO EN LUGAR DE PONER LA PALABRA FUNCTION UTILIZAMOS UNA FLECHA => -->
+
+<!-- VEAMOS UN EJEMPLO -->
+
+function sumame (numero1, numero2, sumaYmuestra, sumaPorDos){
+  var sumar = numero1+numero2;
+  sumaYmuestra(sumar);
+  sumaPorDos (sumar);
+  return sumar;
+}
+
+sumame(5,7, dato => { <!-- AQUI APARECE LA FLECHA DE ESTA FORMA ESCRIBIMOS MENOS, EL PARAMETRO NO ES NECESARIO QUE VAYA DENTRO DE () "SI LLEVA DOS PARAMETROS SI HAY QUE PONER (
+  
+)" -->
+
+  console.log ("La suma es :" , dato);
+},
+
+dato =>{
+  console.log ("La suma por dos es :" , (dato*2));
+});
+
+</body>
+</html>

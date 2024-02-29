@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<!--     PROMESAS Y FECTH -->
+
+<!--     LAS PROMESAS SON MUY UTILES PARA PARA EVITAR EL CALLBACK HELL, TENER UN CALLBACK DENTRO DE OTRO Y DENTRO DE OTRO... ASI SUCESIVAMENTE DE FORMA QUE EL CODIGO SE HACE MUY ILEGIBLE E IMANTENIBLE
+    SOBRE TODO CUANDO TRABAJAMOS CON DATOS ASINCRONOS CON PETICIONES A APIRES, CON PETICINES AJAX, ETC. ES MUY COMUN QUE PASEN ESTE TIPO DE COSAS 
+    ENTONCES POR ESO ESTA EL METODO FETCH Y POR ESO DEVUELVE PROMESAS Y TRABAJAMOS CON PROMESAS -->
+    <!-- PUEDE PASAR QUE A LO MEJOR TENGAMOS VARIAS PETICIONES AJAX QUE TENEMOS QUE ESPERAR A QUE TENGAMOS EL RESULTADO DE UNA PARA DESPUES EJECUTAR LA OTRA Y ASI CONTINUAMENTE -->
+
+
+
+<!--     VAMOS A VER UN EJEMPLO -->
+
+<!-- IMAGINAMOS QUE A PARTE DE TENER ESTA PROMESA fetch('https://reqres.in/api/users') ESTA LLAMADA AJAX UTILIZANDO FETCH AL BACKENDA PARA QUE NOS DEVULEVA UN JSON Y NOSOTROS TENER ESOS OBTEJOS CON FRONTEND CON JSON -->
+<!-- LE PASAREMOS UNA FUNCION AL CÓDIGO QUE SIMPLEMENTE NOS VA SERVIR PARA MOSTRAR UNA INFORMACION -->
+ 
+var div_usuarios =document.querySelector("#usuarios");
+var div_janet =document.querySelector("#janet");<!--  ESTE ES EL SELECTOR DE JANET -->
+
+getUsuarios() <!-- COMO ES UNA PROMESA PODEMOS UTILIZAR EL METODO THEN -->
+.then(data => data.json())
+.then(users => {
+listadoUsuarios(users.data); <!-- LA HEMOS LLAMADO AQUI --><!--  QUEREMOS QUE DESPUES DE ESTE LISATDO NOS HAGA LA SIGUIENTE PROMESA CON UN RETURN -->
+
+return getJanet(); <!-- ENCADENAREMOS OTRO THEM EN LUGAR DE HACER UN CALLBACK -->
+})
+.then(data => data.json()) <!-- COMO EL METODO ANTERIOR NOS DEVUELVE UNA PROMESA PODMEOS IR ENCADENANDO PROMESAS, ES DECIR CUANDO TENGA LOS RESULTADOS DE LA PETICION AJAX ENTONCES CAPTURALOS Y LISTAME LOS USUARIOS Y LUEGO DEVUELVEME EL OTRO USUARIO, UNA VEZ TENGAMOS ESE OTRO USUARIO CAPTURAME LOS DATOS QUE ME DEVUELVE ESA PETICION -->
+.then(user =>{ <!-- Y UNA VEZ QUE LOS TENGA LO METEMOS DENTRO DE LA VARIABLE JANET Y MOSTRAREMOS ESE USUARIO JANET(CREAREMOS UN METODO QUE SEA JANET O MOSTAR JANET) -->
+    mostrarJanet(user.data);
+});
+
+
+function getUsuarios (){ <!-- ESTO TAMBIEN LO VAMOS A ENCAPSULAR EN FUNCIONES Y METEREMOS EL fecth AHI -->
+    fetch('https://reqres.in/api/users') <!-- HAREMOS return PARA DEVOVER EL RESULTADO QUE NOS DE EL FETCH  -->
+
+      }
+
+      function getJanet (){ <!-- NOS TIENE QUE SACAR ESTE USUARIO PERO QUEREMOS QUE ESTO NOS LO SAQUE UNA VEZ TENGAMOS EL LISTADO DE USUARIOS-->
+        return fetch('https://reqres.in/api/users/2')
+    }
+
+<!--     AHORA NECESITAMOS HACER OTRA LLAMADA QUE NOS DEVUELVE A OTRO URL QUE NOS DEVUELVE A OTRO JSON, ES DECIR QUEREMOS SACAR UN USUARIO EN CONCRETO SIMPLEMENTE HACIENDO ESTA PECION AJAX 
+    /api/users?page=2 -->
+
+
+function listadoUsuarios (usuarios){ <!-- LE PASAREMOS COMO PARAMETRO usuarios ENTONCES LA LLAMAREMOS ARRIBA  -->
+usuarios.map((user, i) =>{ 
+let nombre= document.createElement('h3');
+
+nombre.innerHTML = i + " . " + user.first_name + " " + user.last_name;
+
+div_usuarios.appendChild(nombre);
+
+document.querySelector(".loading").style.display = 'none';
+
+});
+}
+
+
+function mostrarJanet (user){<!--  ESTE ES EL METODO QUE HEMOS CREADO JANET CREAREMOS ARRIBA EL SELECTOR DE JANET-->
+    let nombre= document.createElement('h4'); 
+    let avatar= document.createElement('img'); <!--     AQUI CREAREMOS UN NUEVO ELEMENTO QUE NOS MUESTRE LA FOTO -->
+    
+    nombre.innerHTML = i + " . " + user.first_name + " " + user.last_name;
+    avatar.src= user.avatar; <!-- AQUI PONEMOS LA URL DE NUESTRA IMAGEN -->
+    avatar.width= '100'; <!-- PODEMOS MODIFICAR LAS PROPIEDADES DE LA FOTO LE HEMOS PUESTO 100PX -->
+
+    div_janet.appendChild(nombre);
+    div_janet.appendChild(avatar);
+    
+    document.querySelector("#janet .loading").style.display = 'none'; 
+    
+    }
+
+ AHORA NECESITAMOS HACER OTRA LLAMADA QUE NOS DEVUELVE A OTRO URL QUE NOS DEVUELVE A OTRO JSON, ES DECIR QUEREMOS SACAR UN USUARIO EN CONCRETO SIMPLEMENTE HACIENDO ESTA PECION AJAX 
+ /api/users?page=2
+</body>
+</html>

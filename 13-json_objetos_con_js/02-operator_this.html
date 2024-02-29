@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<!--   OPERADOR THIS -->
+
+<!-- EL OPERADOR THIS HACE REFERENCIA AL OBJETO EN EL CUAL ESTAMOS HACIENDO CLICK EN ESE MOMENTO -->
+<!-- VEREMOS UN EJEMPLO -->
+
+<!-- EN NUESTRO HTML PUSIMOS LO SIGUIENTE -->
+<body>
+  <h1>Curso JavaScript</h1>
+  <p>Nuestro primer script en JS</p>
+
+  <p>
+    <button id="boton">Presioname</button>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</p>
+
+<!-- Y EN NUESTRO JS TENIAMOS LO SIGUIENTE -->
+var boton =document.querySelector ("#boton"); 
+boton.addEventListener('click', function(){ EL EVENTO 'click' CORRESPONDE CUANDO LE DAMOS CLICKE A ESE boton
+  cambiarColor();
+  this.style.border= "10px solid black"; <!-- INDICAMOS EL THIS PARA QUE HAGA REFERENCIA AL ELEMENTO QUE LE ESTAMOS DANDO 'click' EL boton CON ths. TENEMOS ACCESO A TODO EL ELEMENTO -->
+});
+
+
+
+
+
+
+
+
+</body>
+</html>

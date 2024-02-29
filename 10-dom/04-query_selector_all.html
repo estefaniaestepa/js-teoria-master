@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  
+<!--   SELECTOR QUERY ALL -->
+
+  <!--   Document.querySelectorAll() -->
+  El método querySelectorAll() de un Element devuelve una NodeList estática (no viva) que representa una lista de
+  elementos del documento que coinciden con el grupo de selectores indicados.
+
+<!--   * Nota: Esto método se implementa en base al método querySelectorAll() del mixin ParentNode. -->
+
+
+<!--   SINTAXIS -->
+  JS
+  elementList = parentNode.querySelectorAll(selectors);
+
+
+
+<!--   PARAMETROS -->
+
+<!--   selectors -->
+  Un DOMString que contiene uno o más selectores para buscar coincidencias. Esta cadena de texto debe ser una cadena CSS
+  selector válida; si no lo es, se lanzará una excepción SyntaxError. Vea Locating DOM elements using selectors para más
+  información acerca de utilizar selectores para identificar elementos. Se pueden especificar varios selectores
+  separándolos utilizando comas.
+
+<!--   * Nota: Los caracteres que no son parte de la sintaxis estándar de CSS deben ser escapados utilizando el caracter de
+  barra invertida. Dado que JavaScript también utiliza el escapado por retroceso, se debe tener especial cuidado al
+  escribir cadenas de texto literales utilizando estos caracteres. Vea Escapando caracteres especiales para más
+  información. -->
+
+
+<!--   Valor devuelto -->
+  Una NodeList no viva que contenga un objeto Element para cada elemento que coincida con al menos uno de los selectores
+  especificados o una NodeList vacía en caso de que no haya coincidencias.
+
+<!--    *Nota: Si los selectores indicados incluyen un pseudo-elemento CSS, la lista devuelta siempre estará vacía. -->
+
+
+
+<!--  EXCEPCIONES -->
+<!--   SyntaxError -->
+  La sintaxis de la cadena de texto selectors no es válida.
+
+<!-- EJEMPLOS -->
+<!--   OBTENIENDO UNA LISTA DE COINCIDENCIAS -->
+
+ <!--  1- Para obtener una NodeList de todos los elementos <p> en el documento: -->
+    JS
+    var matches = document.querySelectorAll("p");
+
+
+
+  <!--   2- Este ejemplo devuelve una lista de todos los elementos <div> del documento con una clase "nota" o "alerta": -->
+    JS
+    var matches = document.querySelectorAll("div.nota, div.alerta");
+
+    <!-- 3- Aquí, se obtiene una lista de elementos <p> cuyo elemento padre inmediato es un div con la clase "highlighted" y que
+      está ubicado dentro de un contenedor cuyo ID es "test". -->
+      JS
+      var container = document.querySelector("#test");
+      var matches = container.querySelectorAll("div.highlighted > p");
+      
+      
+<!--       4- Este ejemplo usa un selector de atributos para devolver una lista de elementos iframe en el documento que
+      contienen un atributo llamado "data-src": -->
+      JS
+      var matches = document.querySelectorAll("iframe[data-src]");
+      
+      
+<!--       5- Aquí, un selector de atributo se utiliza para devolver una lista de los elementos de una lista cuyo ID es
+      "userlist" que tiene un atributo "data-active" cuyo valor es "1": -->
+      JS
+      var container = document.querySelector("#userlist");
+      var matches = container.querySelectorAll('li[data-active="1"]');
+
+
+
+<!--     ACCEDIENDO A LAS COINCIDENCIAS -->
+      Una vez que se devuelve la NodeList de los elementos que coinciden, se puede examinar como cualquier array. Si el
+      array está vacío (lo que significa que su propiedad length es 0), entonces es que no se encontraron coincidencias.
+
+      En cualquier caso, se puede simplemente utilizar la notación estándar de los arrays para acceder al contenido de
+      la lista. Se puede usar cualquier sentencia de iteración, como por ejemplo:
+
+      JS
+      var highlightedItems = userList.querySelectorAll(".highlighted");
+      highlightedItems.forEach(function (userItem) {
+      deleteUser(userItem);
+      });
+
+
+<!-- NOTAS DE USUARIO -->
+      querySelectorAll() se comporta de forma diferente que la mayoría de librerías DOM de JavaScript, que pueden llevar
+      a resultados inesperados.
+
+  <!--     HTML -->
+      Considere este HTML, con sus tres bloques anidados
+    <div>.
+
+      HTML
+      Copy to Clipboard
+      <div class="outer">
+        <div class="select">
+          <div class="inner"></div>
+        </div>
+      </div>
+
+
+<!--       JavaScript -->
+      JS
+      var select = document.querySelector(".select");
+      var inner = select.querySelectorAll(".outer .inner");
+      inner.length; // 1, not 0!
+
+
+      En este ejemplo, cuando se selecciona ".outer .inner" en el contexto el <div> con la clase "select", el elemento
+        con la clase ".inner" todavía es encontrado, aun sabiendo que .outer no es descendiente del elemento base sobre
+        el que se realiza la búsqueda (".select"). Por defecto, querySelectorAll() sólo verifica que el último elemento
+        en el selector se encuentra dentro del rango de búsqueda.
+
+        La pseudo-clase :scope (en-US) recupera el comportamiento esperado, encontrando coincidencias sólo en selectores
+        descendientes del elemento base:
+
+        JS
+        var select = document.querySelector(".select");
+        var inner = select.querySelectorAll(":scope .outer .inner");
+        inner.length; // 0
+   
+</body>
+
+</html>

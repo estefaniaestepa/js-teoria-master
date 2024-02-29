@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+<!--     CONDICIONAL SWITCH -->
+<!--     
+    NOS PERMITE HACER MUCHAS CONDICIONES DE UNA MANERA MÁS ORGANIZADA
+    ES POSIBLE TENER UNA SOLA ESTRUCCTURA DE CONTROL CON LOS POSIBLES CASOS QUE VAYAN A PASAR Y VAMOS A COMPROBAR LOS DIFERENTES CASOS
+    SI UNO DE LOS CASOS SE CUMPLIERA HARIA LA FUNCIÓN Y EJECUTARIA ESE CÓDIGO -->
+
+    VEREMOS UN EJEMPLO
+    var edad= 18;
+    var imprime= ""; <!-- TENEMOS DOS VARIABLES  -->
+
+    switch(edad){ <!-- PONDREMOS LA PALABRA SWITCH Y ENTRE PARENTESIS LA VARIABLE -->
+        case 18: <!-- ES PARA COMPROBAR UN CASO, EN EL CASO QUE LA VARIABLE SEA 18, SE PUEDE PONER UN CONSOLE.LOG O OTRA VARIABLE DE IMPRIME -->
+    imprime ="acabas de cumplir la mayoria de edad"; <!-- AQUI LE HEMOS DADO UN VALOR A IMPRIME -->
+        break; <!-- ESTO SE PONE PARA PASAR AL SIGUIENTE CASO, TODO ESTO SERÍA UN CASO DESDE CASE HASTA BREAK -->
+        case 25:
+        imprime ="ya eres un adulto"; <!-- ESTO ES LO QUE IMPIRME EN EL CASO QUE TENGAS 25 -->
+        break;
+        case 40:
+            imprime ="crisis de los 40"; <!-- ESTO ES LO QUE IMPIRME EN EL CASO QUE TENGAS 40 -->
+            break;
+            case 75:
+                imprime ="eres ya un anciano"; <!-- ESTO ES LO QUE IMPIRME EN EL CASO QUE TENGAS 70 -->
+                break;
+                default: <!-- ES CUANDO NO SUCEDE NADA DE ESTO -->
+                imprime = "tu edad es neutra";
+                break;
+    } <!-- LOS CASOS DE SWITCH SE METEN ENTRE LLAVES COMO UN IF -->
+
+    console.log (imprime); <!-- EN ESTE CASO ME IMPRIME acabas de cumplir la mayoria de edad PORQUE LA VARIABLE ES DE 18 -->
+            </body>
+</html>

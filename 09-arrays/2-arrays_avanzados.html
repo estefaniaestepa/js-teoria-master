@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<!--   ARRAYS AVANZADOS -->
+
+<!-- COMO PODEMOS VER LA LONGITUD QUE TIENE UN ARRAY, COMO PODEMOS VER CUANTOS ELEMENTOS TIENE UN ARRAY -->
+<!-- VEREMOS UN EJEMPLO -->
+
+var nombre= "Estefania Estepa";
+var nombres= ["Estefania Estepa", "Juan Lopez", "Manolo Garcia", "Victor Robles", "Jose Martin", 52, true];
+
+var lenguajes = new Array ("PHP", "JS", "Go", "Java");
+
+console.log(nombres.length);<!--  .length CON ESTA PROPIEDAD PODEMOS SABER LA LONGITUD Y MUESTRA EN LA CONSOLA LOS ELEMENTOS --> 
+
+
+
+<!-- PONIENDO EL ELEMENTO DEL INDICE DE MI ARRAY SACAR SU VALOR LO HAREMOS CON EL PROMPT -->
+<!-- VEREMOS UN EJEMPLO -->
+var nombre= "Estefania Estepa";
+var nombres= ["Estefania Estepa", "Juan Lopez", "Manolo Garcia", "Victor Robles", "Jose Martin", 52, true];
+
+var lenguajes = new Array ("PHP", "JS", "Go", "Java");
+var elemento = parseInt(prompt("Que elemento del array quieres??", 0)); <!-- POR DEFECTO PONDRIAMOS EL 0 QUE ES EL PRIMERO Y LO CONVERTIREMOS A parseInt PARA PODER UTILIZARLO Y QUE NO NOS FALLE-->
+alert (nombres[elemento]); <!-- INDICAREMOS UN ALERT DE NOMBRES Y ENTRE []LE INDICAREMOS ELEMENTO QUE CONTIENE EL NUMERO DEL INDICE DEL ARRAY QUE QUEREMOS SACAR, SI PONEMOS UN NUMERO QUE NO EXITE EN EL ARRAY NOS DIRA UNDEFINY -->
+
+
+
+
+<!-- COMO HACEMOS PARA QUE NO SE INTRUDUZCAN INDICES MAS ALLA DE LOS QUE HAYM SI METEMOS UN INDICE QUE NO TENEMOS NOS DEVUELVA UN ERROR -->
+<!-- PONDREMOS UN IF Y ELSE PARA QUE NOS DEVULEVA ESE ERROR EN EL ALERT -->
+<!-- VEREMOS UN EJEMPLO -->
+
+var nombre= "Estefania Estepa";
+var nombres= ["Estefania Estepa", "Juan Lopez", "Manolo Garcia", "Victor Robles", "Jose Martin", 52, true];
+
+var lenguajes = new Array ("PHP", "JS", "Go", "Java");
+
+var elemento = parseInt(prompt("Que elemento del array quieres??", 0));
+
+if(elemento >=nombres.length){ <!--  SI ELEMENTO ES MAYOR O IGUAL A nombres.length (.length ES LA LONGITUD) -->
+alert("Introduce el numero correcto menor que "+nombres.length) <!-- ESTE ES EL ERROR QUE NOS SACARÁ Y LE CONCATENAREMOS +nombres.length PARA QUE NOS DIGA LA LONGITUD MAXIMA -->
+}else{ <!-- Y SI NO, ES DECIR SI ES CORRECTO LO QUE INDICAMOS NOS MUESTRE EL NUMERO DEL USUARIO -->
+  alert ("El usuario seleccionado es: " + nombres[elemento]); <!-- LE CONCATENAREMOS + nombres[elemento] ESTO CONTIENE EL NUMERO DEL INDICIDE DEL ARRAY  -->
+}
+
+
+
+
+<!-- RECORRER UN ARRAY COMPLETO Y MOSTRAR TODO SU RESULTADO POR PANTALLA
+IMAGINAMOS QUE QUEREMOS VER TODOS LOS ELEMENTOS DE UN ARRAY POR PANTALLA -->
+<!-- VEREMOS UN EJEMPLO -->
+
+var nombre= "Estefania Estepa";
+var nombres= ["Estefania Estepa", "Juan Lopez", "Manolo Garcia", "Victor Robles", "Jose Martin", 52, true];
+
+var lenguajes = new Array ("PHP", "JS", "Go", "Java");
+
+var elemento = parseInt(prompt("Que elemento del array quieres??", 0));
+
+document.write("<h1>Lenguajes de programacion del 2018</h1>"); NOS MUESTRA EN LA PAGINA EL <H1></H1>
+
+document.write ("<ul>"); <!-- PONDREMOS UNA LISTA DE HTML PARA ESTAR MOSTRANDO CADA UNO DE LOS ELEMENTOS DENTRO DE LA ETIQUETA LI QUE SE LA CONCATENAREMOS AL  document.write  -->
+<!-- LE PONDRIAMOS MIENTRAS QUE EL CONTADOR (i) SEA MENOR A lenguajes.length PONDREMOS i++ PARA QUE EL CONTADOR VAYA SUMANDO -->
+for(var i= 0; i< lenguajes.length; i++ ){<!-- LO RECOMENDABLE PARA QUE SE NOS VEAN TODOS LOS ELEMENTOS DE NUESTRA ARRAY SERIA UTILIZANDO UN BUCLE, EN ESTE CASO EL FOR QUE TIENE UNA VARIABLE INICIALIZADORA EL (i) QUE SERIA CERO Y QUE SEA MENOR AL lenguajes.length NUMERO TOTAL DE ELEMENTOS Y VAYA INCREMENTANDO i++ -->
+  document.write ("<li>"+lenguajes[i]+"</li>"); <!-- PONDREMOS QUE NOS ESCRIBA EL NOMBRE DE LA VARIABLE QUE QUEREMOS Y DESDE DONDE QUEREMOS QUE EMPIECE , LE CONCATENAREMOS EL LI PARA QUE NOS MUESTRE LOS ELEMENTOS DE LA LISTA -->
+}
+document.write ("</ul>"); 
+
+
+<!-- for (inicialización; terminación; iteración por ciclo) {
+  sentencia(s)
+} -->
+</body>
+</html>

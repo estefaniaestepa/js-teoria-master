@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<!--   EVENTOS -->
+<!-- UN EVENTO ES UNA FUNCION QUE SE EJECUTA CUANDO SUCEDE ALGO -->
+
+  <!-- LOS EVENTOS SON FUNCIONES QUE SE EJECUTAN CADA VEZ QUE SUCEDE ALGO, POR EJEMPLO CUANDO EL USUARIO MUEVE EL RATON, CUANDO LE DA CLICK A ALGO ALGUN ELEMENTO
+  CUANDO EL USUARIO ESCRIBE ALGO EN UN IMPUT, CUANDO EL USUARIO BORRA ALGO, CUANDO REDIMENSIONA LA VENTANA TODO ESTO SON EVENTOS QUE PUEDEN SUCEDER EN NUESTRA PAGINA WEB
+  CON JAVA SCRIPT PODEMOS INTERACTUAR CON TODOS LOS ELEMENTOS DE NUESTRA PAGINA WEB -->
+  <!-- PODEMOS HACER QUE CUANDO EL USUARIO LE DE CLICK A UN BOTON PASE CUALQUIER COSA, CUANDO EL USUARIO PASE POR ENCIMA DE ALGUN ELEMENTO PASE CUALQUIER OTRA COSA -->
+
+
+
+
+
+
+<!--   VAMOS HABLAR A CERCA DE LOS EVENTOS Y COMO FUNCIONAN DENTRO DE JAVA SCRIPT  -->
+
+<!-- EVENTOS DEL RATON (CLICK) -->
+<!-- CREAREMOS EN NUESTRO HTML LA ETIQUETA <BUTton></BUTton> CON UN ID -->
+
+<body>
+  <h1>Curso JavaScript</h1>
+  <p>Nuestro primer script en JS</p>
+
+  <p>
+ <!--  <button id="boton" onclick ="alert('Hola me has presionado')">Presioname</button> --> <!-- ESTA ES LA MANERA DE CATURAR EL EVENTO PONIENDO EL ATRIBUTO CON HTML -->
+<!--  <button id="boton" ondblclick ="cambiarColor()";>Presioname</button> ESTA FUNCION LE TIENES QUE DAR DOBLE CLICK -->
+<!--  <button id="boton" onclick ="cambiarColor()";>Presioname</button> ESTA ES UNA MANERA DE UTILIZAR HTML CON JS PERO NO ES RECOMENDABLE -->
+ <button id="boton">Presioname</button><!--  ESTA ES LA MEJOR -->
+</p>
+  <div id="micaja">!Hola soy una caja¡</div>
+
+  <hr>
+
+<section id="miseccion">
+  <h1 id="encabezado">Listado de textos de los Divs</h1>
+</section>
+
+  <div class="amarillo">!Soy el primer DIV¡</div>
+  <div class="rojo">!Yo el segundo¡</div>
+  <div class="rojo">!El tercero soy yo¡</div>
+
+
+var boton =document.querySelector("#boton"); <!-- PODEMOS CAPTURAR O SELECCIONAR ESE BOTON DENTRO DE UNA VARIABLE Y LO SELECCIONAMOS CON EL .querySelector Y RECOGEMOS CON EL ELEMENTO EL ID DE BOTON ("#boton") -->
+<!-- PODMEOS HACER DOS COSAS CAPTURAR EL ELEMENTO EN HTML --> <!-- PONIENDO EL ATRIBUTO CLICK --> onclick ="alert('Hola me has presionado')" <!-- CADA VEZ QUE EL USUARIO LE DE CLICKA AL BOTON AQUI SE VA A EJECUTAR ALGO EN ESTE CASO UN ALERT -->
+console.log ("me has dado click");
+function cambiarColor(){<!-- FUNCION PARA CAMBIAR EL COLOR -->
+  var bg= boton.style.background; <!-- ES RECOMENDABLE USAR UNA VARIABLE PARA NO ESTAR REUTILIZANDO ESTE TROZO DE CODIGO boton.style.background PORQUE ESTO FUERZA A ACCEDER A ESAS PROPIEDADES Y ESO HACE QUE EL PROGRAMA SEA MAS LENTO -->
+  if(bg == "green"){ <!--   LE PONDRIAMOS UN IF PARA QUE EL COLOR SE FUERA ALTERNANDO CADA VEZ QUE HACEMOS CLICK AL BOTON, ES DECIR SI BG ES IGUAL A GREEN QUE LO PONGA EN COLOR ROJO -->
+    boton.style.background= "red";<!-- ACCEDEMOS A BOTON -->
+}else{
+  boton.style.background= "green";<!--  Y SI NO QUE LO PONGA VERDE -->
+}
+
+boton.style.padding= "10px"; 
+boton.style.border= "1px solid #ccc";<!--  /*estos son estilos del boton que estarian siempre de manera global*/ -->
+return true;
+}
+
+
+
+<!-- EXPLICACION -->
+<button id="boton" onclick ="cambiarColor()";>Presioname</button>
+<!-- SI EJECUTAMOS ESTA FUNCION EN EL BOTOR CAMBIAR COLOR EN EL EVENTO onclick QUE VA A SUCEDER CUANDO PRESIONE EL BOTON TENEMOS LA FUNCION DEFININA EN JS Y LA LLAMAMOS DESDE
+EL HTML PORQUE LA TENEMOS INCRUSTADA/INCLUIDO EN EL-->  <script src="js/30-eventos.js"></script>
+
+
+
+
+
+<!-- LA MEJOR FORMA DE UTILIZAR NUESTROS CODIGOS DE HTML CON JS ES CON EL ADD EVEN LISTENER -->
+<!-- ES UNA COSA SIMILAR A LO QUE HACE JAYQUERY QUE ES QUE PUEDES EJECUTAR UN EVENTO JUSTO DENTRO DEL CODIGO DE JS Y TENER UN ESCUCJHADOR DE EVENTOS -->
+<!-- VEREMOS UN EJEMPLO -->
+
+var boton =document.querySelector("#boton"); 
+<!-- EVENTO CLICK -->
+boton.addEventListener('click', function(){
+  cambiarColor();
+}); <!-- SI YO LLEVO MI BOTON SOBRE ESTE OBJETO DEL BOTON TENEMOS YA DISPONIBLE EL METODO .addEventListener DE ESTA MANERA PODEMOS CAPTURAR CUALQUIER EVENTO POR EJEMPLO CLICK 
+Y ESTO TIENE UNA FUNCION DE CALLBACK QUE EN ESTE CASO LA FUNCION DE CALLBACK SERIA CAMBIAR COLOR (PERO PODEMOS DEFINIR UNA FUNCION ANONIMA QUE NOS SIRVA TAMBIEN PARA HACER LA FUNCIONALIDAD QUE FUERA ) -->
+
+
+
+<!-- MOUSE OVER -->
+<!-- CUANDO PASAS POR ENCIMA DE ALGO TE LO CAMBIA DE COLOR -->
+
+boton.addEventListener('mouseover', function(){<!--  UTILIZAREMOS EL BOTON CON EL EVENTO .addEventListener UTILIZAREMOS EL EVENTO 'mouseover' Y UTULIZAREMOS UNA FUNCION A MODO DE CALLBACK  -->
+boton.style.background= "#ccc"; <!-- LLAMAREMOS A UN METODO QUE HAGA UN CAMBIO DE CODIGO O QUE EJECUTE CUALQUIER COSA O QUE INCLUSO LE CAMBIE LOS ESTILOS A ESE BOTON -->
+
+});
+
+
+
+
+<!-- MOUSEOUT -->
+<!-- ES LO MISMO QUE MOUSE OVER, PERO CAPTURA EL EVENTO O LANZA EL EVENTO CUANDO SALES DE PASAR POR ENCIMA CON EL CURSOR DEL RATON -->
+boton.addEventListener('mouseout', function(){<!--  UTILIZAREMOS EL BOTON CON EL EVENTO .addEventListener UTILIZAREMOS EL EVENTO 'mouseover' Y UTULIZAREMOS UNA FUNCION A MODO DE CALLBACK  -->
+boton.style.background= "black"; <!-- LLAMAREMOS A UN METODO QUE HAGA UN CAMBIO DE CODIGO O QUE EJECUTE CUALQUIER COSA O QUE INCLUSO LE CAMBIE LOS ESTILOS A ESE BOTON -->
+
+});
+
+
+</body>
+</html>

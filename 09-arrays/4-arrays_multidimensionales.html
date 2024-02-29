@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<!--   ARRAYS MULTIDIMENSIONALES O ARRAYS DENTRO DE OTROS ARRAYS-->
+<!-- DENTRO DE UN ARRAY NO ES NECESARIO SOLO TENER STRINGS, SI NO PODEMOS TENER VALORES, BULEANOS, CUALQUIER DATO DENTRO DE UN ELEMENTO DE UN ARRAY -->
+<!-- VEREMOS UN EJEMPLO -->
+
+var categorias = ['Acción', 'Terror', 'Comedia'];
+var peliculas =['La verdad Duele', 'La Vida es Bella', 'Gran Torino'];
+
+var cine= [categorias, peliculas];<!--  ESTO ES EL ARRAY MULTIDIMENSIONAL PORQUE TIENE DOS DIMENSIONES LA PRIMERA SERIA CATEGORIAS QUE ES EL 0 Y PELICULAS EL 1 -->
+
+console.log(cine[0][1]);<!-- CON ESTO PODEMOS ACCEDER A LOS DOS ARRAYS PERO SI QUEREMOS ACCEDER A LAS CATEGORIAS DENTRO DEL ARRAY DE CINE Y PASAREMOS A LAS CATEGORIAS DEL ARRAY MULTIDIMENSIONAL INDICAREMOS ENTRE []  EL 0 ES LA PRIMERA CATEGORIA Y EL SEGUNDO [] INDICAREMOS EL NUMERO DEL ELEMENTO DE ESA CATEGORIA -->
+console.log(cine[1][2]); <!-- ESTO ES LO MISMO PERO PARA ACCEDER A LA CATEGORIA DE PELICULAS -->
+
+</body>
+</html>

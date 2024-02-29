@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<!--   PARAMETROS REST Y STREAD -->
+
+<!-- VEREMOS UN EJEMPLO DE REST -->
+
+<!-- UTILIZAMOS REST CON ...DELANTE DE LA FUNCION Y NOS RECOGE EL RESTO DE PARAMTROS QUE HAYAN SIN NECESIDAD DE SABER LA CANTIDAD -->
+
+function listadoFrutas (fruta1, fruta2, ...resto_de_frutas){ <!-- ESTE PARAMETRO ...resto_de_frutas SI LO UTILIZAMOS NORMAL(SIN LOS 3 PUNTOS ) PODEMOS HACER UN CONSOLE.LOG -->
+<!-- PERO SI LE PONEMOS LOS 3 ... NOS VA A PASAR TODOS LOS VALORES QUE LE ESTAMOS DANDO DENTRO DE UN ARRAY, UN ARRAY ES UNA COLECCION DE VALORES ORDENADO EN UN INDICE DE CERO HACIA ARRIBA  -->
+
+console.log("Fruta 1: " ,fruta1 );
+  console.log("Fruta 2: " ,fruta2 );
+  console.log( resto_de_frutas ); <!-- LO QUE VA A LLEVAR DENTRO SERÁ SANDIA QUE ES LA TERCERA -->
+}
+
+listadofrutas ("Naranja", "Manzana", "Sandia", "Pera", "Melon", "Coco"); <!-- AQUI NO PASARÍA NADA Y NOS MUESTRA COMO FRUTA1 Naranja Y COMO FRUTA2 Manzana -->
+
+<!-- QUE PASA SI LE QUEREMOS PASAR UNA SERIE DE PARAMETROS QUE SON INDEFINIDOS COMO POR EJEMPLO OTRAS FRUTAS
+NO PASA NADA NOS ESCUPE UN ERROR Y NO NOS LO MUESTRAIGAMINATE QUE ESTOS PARAMETROS SON INDEFINIDOS PARA ESTO UTILIZAMOS EL REST Y LE PONEMOS A LA FUNCION ...DELANTE  -->
+
+<!-- ESTO ES EL ARRAY
+(4) ['Sandia', 'Pera', 'Melon', 'Coco']
+0
+: 
+"Sandia"
+1
+: 
+"Pera"
+2
+: 
+"Melon"
+3
+: 
+"Coco"
+length
+: 
+4 -->
+
+<!-- VEREMOS UN EJEMPLO DE STREAD -->
+
+function listadoFrutas (fruta1, fruta2, ...resto_de_frutas){
+
+  console.log("Fruta 1: " ,fruta1 );
+  console.log("Fruta 2: " ,fruta2 );
+  console.log(resto_de_frutas);
+}
+
+listadoFrutas ("Naranja", "Manzana", "Sandia", "Pera", "Melon", "Coco"); 
+var frutas =["Naranja", "Manzana"] <!-- AL IGUAL QUE ESTAMOS INVOCANDO EL LISTADODEFRUTAS, VAMOS A CREARNOS UN ARRAY , EL ARRAY SIEMPRE VA CON [] Y VAMOS METIENDO VALORES Y SIMPLEMENTE ES UNA COLECCION DE VALORES -->
+listadoFrutas (...fruta, "Sandia", "Pera", "Melon", "Coco"); <!-- PUEDO METER DENTRO EL ARRAY Y SI LE PONEMOS LOS ... DELANTE  -->
+<!-- SI QUEREMOS QUE INTERPRETE QUE NARANJA ES EL PARAMETRO 1 Y MANZANA EL PARAMETRO 2 ES DECIR QUE HAGA UN SPRIT LE TENEMOS QUE PONER LOS 3 PUNTOS DELANTE Y NOS SALDRA LO SIGUIENTE -->
+FRUTA1=NARANJA
+FRUTA2=MANZANA
+RESTO= SANDIA, PERA, MELON Y COCO
+</body>
+</html>

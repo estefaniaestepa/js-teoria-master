@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+ <!--  RECORRER ARRAYS FOR O FOREACH -->
+
+<!--  OS MUESTRO LA MANERA CLASICA DE RECORRER UN ARRAY -->
+ <!-- VEREMOS UN EJEMPLO -->
+
+var nombre= "Estefania Estepa";
+var nombres= ["Estefania Estepa", "Juan Lopez", "Manolo Garcia", "Victor Robles", "Jose Martin", 52, true];
+
+var lenguajes = new Array ("PHP", "JS", "Go", "Java");
+
+var elemento = parseInt(prompt("Que elemento del array quieres??", 0));
+
+document.write("<h1>Lenguajes de programacion del 2018</h1>"); NOS MUESTRA EN LA PAGINA EL <H1></H1>
+
+document.write ("<ul>"); <!-- PONDREMOS UNA LISTA DE HTML PARA ESTAR MOSTRANDO CADA UNO DE LOS ELEMENTOS DENTRO DE LA ETIQUETA LI QUE SE LA CONCATENAREMOS AL  document.write  -->
+<!-- LE PONDRIAMOS MIENTRAS QUE EL CONTADOR (i) SEA MENOR A lenguajes.length PONDREMOS i++ PARA QUE EL CONTADOR VAYA SUMANDO -->
+for(var i= 0; i< lenguajes.length; i++ ){<!-- LO RECOMENDABLE PARA QUE SE NOS VEAN TODOS LOS ELEMENTOS DE NUESTRA ARRAY SERIA UTILIZANDO UN BUCLE, EN ESTE CASO EL FOR QUE TIENE UNA VARIABLE INICIALIZADORA EL (i) QUE SERIA CERO Y QUE SEA MENOR AL lenguajes.length NUMERO TOTAL DE ELEMENTOS Y VAYA INCREMENTANDO i++ -->
+  document.write ("<li>"+lenguajes[i]+"</li>"); <!-- PONDREMOS QUE NOS ESCRIBA EL NOMBRE DE LA VARIABLE QUE QUEREMOS Y DESDE DONDE QUEREMOS QUE EMPIECE , LE CONCATENAREMOS EL LI PARA QUE NOS MUESTRE LOS ELEMENTOS DE LA LISTA -->
+}
+document.write ("</ul>"); 
+
+
+
+<!-- VEREMOS UNA MEJOR PARA RRECORRER ARRAYS QUE ES CON EL METODO FOREACH -->
+ <!-- VEREMOS UN EJEMPLO -->
+ 
+ var nombre= "Estefania Estepa";
+ var nombres= ["Estefania Estepa", "Juan Lopez", "Manolo Garcia", "Victor Robles", "Jose Martin", 52, true];
+ 
+ var lenguajes = new Array ("PHP", "JS", "Go", "Java");
+ 
+ var elemento = parseInt(prompt("Que elemento del array quieres??", 0));
+ 
+ document.write("<h1>Lenguajes de programacion del 2018</h1>"); NOS MUESTRA EN LA PAGINA EL <H1></H1>
+ 
+ document.write ("<ul>");
+
+<!--   .forEach DENTRO DE ESTE ELEMENTO TENEMOS UNA FUNCION DE CALLBACK QUE PUEDO UTILIZAR UNA FUNCION DE FLECHA PARA DEFINIRLA, 
+  ESTA FUNCION DEL CALLBACK VA A RECIBIR VARIOS PARAMETROS, UN VALOR O UN ELEMENTO , VA A RECIBIR EL INDICE (INDEX) EL Nº DEL INDICE QUE ESTA RECCORRIENDO Y UN VALOR QUE SE VA A LLAMAR EN ESTE CASO DATA(SE PUEDE LLAMAR COMO QUERAMOS)-->
+  lenguajes.forEach((elemento,indice, arreglo )=>{ <!-- elemento SE VERIA TODOS LOS ELEMENTOS DE LA LISTA ,indice NOS SALDRIA LA NUMERACION, arreglo NOS MUESTRA LO QUE TIENE EL ARRAY ORIGINAL -->
+   
+    console.log(arreglo);<!--  EL ARREGLO COGE EL METODO .forEach DE LA VARIABLE ORIGINAL, ESTO NO ES NECESARIO -->
+    document.write  ("<li>"+indice+" - "+elemento+ "</li>");<!--  AQUI PODEMOS HACER UN DOCUMENTO COMO EL QUE HICIMOS DE MANERA CLASICA, AQUI NO HACE FALTA PONER EL INDICE [i] -->
+  } ); <!--  +elemento[i]+ ELEMENTO ES EL QUE ESTOY RECORRIENDO i ES EL INDICE -->
+
+  document.write ("</ul>"); 
+
+
+
+
+
+
+</body>
+</html>

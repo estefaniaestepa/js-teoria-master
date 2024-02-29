@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- CONDICIONALES, OPERADORES RELACIONALES Y OPERADORES LOGICOS -->
+  <!-- PARA HACER CONDICIONES Y ESTRUCCTURAS DE CONTROL COMPARATIVAS -->
+
+  <!-- UN CONDICIONAL ES UNA ESTRUCCTURA DE CONTROL O UNAS INTRUCCIONES QUE NOS VAN A PERMITIR COMPARAR ALGO -->
+  <!-- ES DECIR,
+Si A es igual a B entonces haz algo
+ES IGUAL SE PUEDE SUSTITUIR POR: ES DIFERENTE, ES MAYOR QUE, ES MENOR QUE, CUALQUIER TIPO DE CONDICION -->
+
+  <!-- LOS CONDICIONALES SON UNAS INTRUCCIONES QUE NOS PERMITEN COMPARAR DOS VALORES O HACER UNA CONDICION CONCRETA Y SI SUCEDE ESA CONDICION QUE EL COGIGO EJECUTE UNA CONDICION Y HAGA ALGO 
+Y SI NO SUCEDE ESA CONDICION QUE EL CODIGO NO HAGA ESO Y QUE HAGA OTRA COSA O NO HAGA NADA -->
+
+
+
+  <!-- COMO HACEMOS UNA CONDICION, CON EL IF -->
+
+  <!--   EL IF ES LA ESTRUCTURA DE CONDICION MAS BASICA QUE NOS PERMITE HACER UNA CONDICION -->
+  <!-- IF SIGNIFICA SI  -->
+
+  IF (){
+  <!--   DENTRO DE LOS PARENTESIS INDICAREMOS LA CONDICION Y LUEGO LAS LLAVES SON EL BLOQUE DE CONTENIDO DE CODIGO QUE VA A EJECUTAR -->
+
+  }
+
+  <!--   SI PASA ESTO -->
+  IF (){
+  <!--    EJECUTA ESTO -->
+  }
+
+  <!-- TENEMOS LOS SIGUIENTES OPERADORES RELACIONALES: -->
+  > MAYOR QUE
+  >= MAYOR O IGUAL
+  < MENOR QUE <=MENOR O IGUAL==COMPLETAMENTE IGUAL !=DIFERENTE O DISTINTO <!-- VEREMOS UN EJEMPLO: -->
+    var edad1= 30;
+    var edad2 = 12;
+
+    if(edad1 > edad2){
+    <!-- SI EDAD 1 ES MAYOR QUE EDAD 2 MUESTRAME UN CONSOLE LOG QUE DIGA QUE Edad uno es mayor que edad2 -->
+    console.log("Edad uno es mayor que edad2");
+    }else{<!--  Y SI NO MUESTRAME UN CONSOLE.LOG QUE DIGA La edad uno es inferior -->
+    console.log ("La edad uno es inferior");
+    }
+
+    <!--   OTRO EJEMPLO -->
+    var edad1 = 18;
+    var nombre= 'David Suarez'
+
+    if(edad >= 18){ <!-- IF(SI) -->
+    console.log (nombre + "tiene" + edad+ "años es mayor de edad")
+    }else{ <!--  SI NO ES (ELSE) -->
+    (nombre + "tiene" + edad+ "años es menor de edad")
+    }
+
+
+
+    <!--   VAMOS ANIDAR UN IF DENTRO DE OTRO -->
+    var edad1 = 33;
+    var nombre= 'David Suarez'
+
+    if(edad >= 18){
+    console.log (nombre + "tiene" + edad+ "años es mayor de edad")
+
+    if(edad ==33){ <!-- AQUI TAMBIÉN PODRIAMOS HABER PUESTO <=33 -->
+    console.log('Todavía eres milenial');
+    }
+    }else{
+    (nombre + "tiene" + edad+ "años es menor de edad")
+    }<!--  EN ESTE CASO EL CONSOLE.LOG TE MOSTRARIA LOS DOS PORQUE LO CUMPLE tiene" + edad+ "años es mayor de edad / Todavía eres milenial -->
+
+    <!-- OTRO EJEMPLO -->
+    var edad1 = 34;
+    var nombre= 'David Suarez'
+
+    if(edad >= 18){
+    console.log (nombre + "tiene" + edad+ "años es mayor de edad")
+
+    if(edad <=33){ console.log('Todavía eres milenial'); <!-- ESTA CONDICION NO LA CUMPLE Y PASA A LA SEGUDA YA QUE NO
+      ES=<33 PASA AL ELSE EN LUGAR DE LA CONDICION PRINCIPAL -->
+      }else{
+      console.log('ya no eres milenial'); <!--  EN ESTE CASO NOS MUESTRA YA NO ERES MILENIAL  -->
+      }
+      }else{
+      (nombre + "tiene" + edad+ "años es menor de edad");
+      }
+
+
+
+      <!--     VAMOS A VER EL ELSE IF
+ES LO MISMO QUE HACER UN IF PERO EN LUGAR DE ANIDARLO LO PONEMOS AL LADO (TAMBIEN SIGNIFICA SI NO ES..) -->
+
+      <!-- LO VEREMOS CON OTRO EJEMPLO -->
+      var edad1 = 34;
+      var nombre= 'David Suarez'
+
+      if(edad >= 18){
+      console.log (nombre + "tiene" + edad+ "años es mayor de edad")
+
+      if(edad <=33){<!-- LA EDAD ES 33 -->
+        console.log('Todavía eres milenial');
+        }else if(edad => 70){<!--  AQUI LE DECIMOS SI ES IGUAL O MAYOR QUE 70 MUESTRE eres anciano -->
+        console.log('eres anciano');
+        }else{
+        console.log('ya no eres
+        millenial');<!-- EN EL CASO QUE NO SE CUMPLA NINGUNA DE ESTAS CONDICIONES, ES DECIR QUE LA EDAD NO SEA MENOR O IGUAL A 33 Y QUE ESTE POR ENCIMA Y QUE NO SEA IGUAL O MAYOR DE 70 -->
+        }
+        }else{
+        (nombre + "tiene" + edad+ "años es menor de edad");
+        }
+
+        <!--       EN LA CONSOLA NOS DIRA QUE YA NO SOMOS MILLENIAL, PORQUE MI EDAD ES 34 ESTA POR ENCIMA DE 33 Y POR DEBAJO DE 70 -->
+        <!-- SI POR EJEMPLO A VAR EDAD1= 73; LO CAMBIAMOS NOS SALDRA ERES ANCIANO -->
+        <!-- SI LE CAMBIAMOS A  var edad1 = 12; NOS DIRA QUE SOMOS MENOR DE EDAD -->
+        <!-- SI LE PONEMOS  var edad1 = 19; ME VA ADECIR QUE TODAVIA SOY MILLENIAL -->
+
+
+
+</body>
+
+</html>
